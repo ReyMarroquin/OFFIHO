@@ -263,8 +263,11 @@ function updateActiveMenuLinks() {
 function initializeBasicFeatures() {
     console.log('Inicializando funcionalidades básicas...');
     
-    // Cargar configuraciones guardadas primero
+    // Cargar configuraciones guardadas
     loadSavedSettings();
+    
+    // Actualizar visibilidad de textos según idioma
+    updateLanguageVisibility();
     
     // Actualizar enlaces del menú
     updateActiveMenuLinks();
@@ -276,7 +279,7 @@ function initializeBasicFeatures() {
     initializeLanguageButtons();
     initializeThemeButtons();
     
-    // Actualizar botones de idioma (importante hacerlo después de cargar config)
+    // Actualizar botones visualmente
     updateLanguageButtons();
     updateThemeButton();
     updateSidebarThemeButtons();
@@ -320,6 +323,64 @@ function loadSavedSettings() {
         APP_STATE.currentTheme = 'light';
         APP_STATE.currentLanguage = 'es';
     }
+}
+
+/**
+ * Muestra/oculta textos según el idioma seleccionado
+ */
+function updateLanguageVisibility() {
+    const currentLang = APP_STATE.currentLanguage;
+    console.log(`Actualizando visibilidad de idioma: ${currentLang}`);
+    
+    // Encontrar todos los elementos con clase de idioma
+    const esElements = document.querySelectorAll('.es-lang');
+    const enElements = document.querySelectorAll('.en-lang');
+    
+    console.log(`Elementos encontrados: ${esElements.length} ES, ${enElements.length} EN`);
+    
+    // Ocultar todos los elementos primero
+    esElements.forEach(el => {
+        el.style.display = 'none';
+        el.style.visibility = 'hidden';
+        el.style.opacity = '0';
+        el.style.position = 'absolute';
+    });
+    
+    enElements.forEach(el => {
+        el.style.display = 'none';
+        el.style.visibility = 'hidden';
+        el.style.opacity = '0';
+        el.style.position = 'absolute';
+    });
+    
+    // Mostrar solo los del idioma actual
+    const elementsToShow = currentLang === 'es' ? esElements : enElements;
+    
+    elementsToShow.forEach(el => {
+        // Restaurar propiedades según el tipo de elemento
+        const tagName = el.tagName.toLowerCase();
+        const isInline = ['span', 'a', 'strong', 'em', 'i', 'b'].includes(tagName);
+        
+        el.style.display = isInline ? 'inline' : 'block';
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+        el.style.position = 'static';
+    });
+    
+    // También actualizar elementos que tienen data-lang
+    const langElements = document.querySelectorAll('[data-lang]');
+    langElements.forEach(el => {
+        const lang = el.getAttribute('data-lang');
+        if (lang === currentLang) {
+            el.style.display = '';
+            el.style.visibility = 'visible';
+        } else {
+            el.style.display = 'none';
+            el.style.visibility = 'hidden';
+        }
+    });
+    
+    console.log(`✅ Visibilidad actualizada - Mostrando: ${currentLang.toUpperCase()}`);
 }
 
 /**
@@ -436,7 +497,7 @@ function updateSidebarThemeButtons() {
  * Inicializa los botones de idioma
  */
 function initializeLanguageButtons() {
-    // Botón en header
+    // Botón en header (OFFIHO)
     const headerLangBtn = document.getElementById('languageToggle');
     if (headerLangBtn && !headerLangBtn.dataset.listenerAdded) {
         headerLangBtn.addEventListener('click', toggleLanguage);
@@ -444,12 +505,20 @@ function initializeLanguageButtons() {
         console.log('Botón de idioma del header inicializado');
     }
     
-    // Botón en sidebar
+    // Botón en sidebar (OFFIHO)
     const sidebarLangBtn = document.getElementById('languageToggleSidebar');
     if (sidebarLangBtn && !sidebarLangBtn.dataset.listenerAdded) {
         sidebarLangBtn.addEventListener('click', toggleLanguage);
         sidebarLangBtn.dataset.listenerAdded = 'true';
         console.log('Botón de idioma del sidebar inicializado');
+    }
+    
+    // Botón de Ley Silla (si existe en la página)
+    const singleLangBtn = document.getElementById('singleLangToggle');
+    if (singleLangBtn && !singleLangBtn.dataset.listenerAdded) {
+        singleLangBtn.addEventListener('click', toggleLanguage);
+        singleLangBtn.dataset.listenerAdded = 'true';
+        console.log('Botón de idioma de Ley Silla inicializado');
     }
     
     console.log('Botones de idioma inicializados');
@@ -465,6 +534,7 @@ function toggleLanguage() {
     // Efecto visual de cambio
     const headerBtn = document.getElementById('languageToggle');
     const sidebarBtn = document.getElementById('languageToggleSidebar');
+    const singleBtn = document.getElementById('singleLangToggle');
     
     if (headerBtn) {
         headerBtn.classList.add('changing');
@@ -479,64 +549,87 @@ function toggleLanguage() {
             sidebarBtn.classList.remove('changing');
         }, 400);
     }
+    
+    if (singleBtn) {
+        singleBtn.classList.add('changing');
+        setTimeout(() => {
+            singleBtn.classList.remove('changing');
+        }, 400);
+    }
 }
 
 /**
  * Cambia el idioma
  */
 function changeLanguage(lang) {
-    if (!['es', 'en'].includes(lang)) return;
+    console.log(`Cambiando idioma a: ${lang}`);
+    
+    if (!['es', 'en'].includes(lang)) {
+        console.error('Idioma no válido:', lang);
+        return;
+    }
     
     APP_STATE.currentLanguage = lang;
     
     try {
         localStorage.setItem('offiho_language', lang);
+        console.log('Idioma guardado en localStorage');
     } catch (error) {
         console.error('Error guardando idioma:', error);
     }
     
     // Actualizar atributo lang del html
     document.documentElement.lang = lang;
+    console.log('Atributo lang del html actualizado a:', lang);
     
-    // Actualizar botones de idioma
+    // Actualizar visibilidad de textos
+    updateLanguageVisibility();
+    
+    // Actualizar botones de idioma (ES/US)
     updateLanguageButtons();
     
-    // Actualizar footer (si existe la función)
-    if (typeof updateFooterLanguage === 'function') {
-        updateFooterLanguage();
-    }
+    // Actualizar botón de Ley Silla (si existe)
+    updateSingleLangButton();
     
-    // Disparar evento para que main.js maneje otras traducciones
+    // Disparar evento
     document.dispatchEvent(new CustomEvent('languageChanged', {
-        detail: { language: lang }
+        detail: { 
+            language: lang,
+            timestamp: Date.now()
+        }
     }));
     
-    console.log(`Idioma cambiado a: ${lang}`);
+    console.log(`✅ Idioma cambiado a: ${lang}`);
 }
 
 /**
- * Actualiza estado de botones de idioma
+ * Actualiza estado de botones de idioma (para ES/US)
  */
 function updateLanguageButtons() {
     const currentLang = APP_STATE.currentLanguage;
     console.log(`Actualizando botones de idioma a: ${currentLang}`);
     
-    // Actualizar botón en header - SOLO BANDERA (ES para español, US para inglés)
+    // Botón en header - OFFIHO
     const headerLangBtn = document.getElementById('languageToggle');
     if (headerLangBtn) {
         const flag = headerLangBtn.querySelector('.language-flag');
         const code = headerLangBtn.querySelector('.language-code');
         
         if (flag) {
+            // Mostrar solo texto: ES o US
             flag.textContent = currentLang === 'es' ? 'ES' : 'US';
-            flag.style.display = 'block';
+            flag.style.display = 'inline-block';
+            flag.style.fontSize = '14px';
+            flag.style.fontWeight = 'bold';
+            console.log('Header button actualizado a:', flag.textContent);
         }
+        
         if (code) {
-            code.style.display = 'none'; // Ocultar texto adicional
+            code.style.display = 'none';
         }
     }
     
-    // Actualizar botón en sidebar
+    // Botón en sidebar - OFFIHO
     const sidebarLangBtn = document.getElementById('languageToggleSidebar');
     if (sidebarLangBtn) {
         const flag = sidebarLangBtn.querySelector('.language-flag-sidebar');
@@ -544,12 +637,18 @@ function updateLanguageButtons() {
         const switchText = sidebarLangBtn.querySelector('.language-switch-text');
         
         if (flag) {
+            // Mostrar solo texto: ES o US
             flag.textContent = currentLang === 'es' ? 'ES' : 'US';
-            flag.style.display = 'block';
+            flag.style.display = 'inline-block';
+            flag.style.fontSize = '16px';
+            flag.style.fontWeight = 'bold';
+            console.log('Sidebar button actualizado a:', flag.textContent);
         }
+        
         if (text) {
-            text.style.display = 'none'; // Ocultar texto completo
+            text.style.display = 'none';
         }
+        
         if (switchText) {
             switchText.textContent = currentLang === 'es' ? 
                 'Switch to English' : 'Cambiar a Español';
@@ -557,6 +656,26 @@ function updateLanguageButtons() {
     }
     
     console.log('Botones de idioma actualizados');
+}
+
+/**
+ * Actualiza el botón de idioma de Ley Silla
+ */
+function updateSingleLangButton() {
+    const singleLangBtn = document.getElementById('singleLangToggle');
+    if (!singleLangBtn) return;
+    
+    const currentLang = APP_STATE.currentLanguage;
+    const langText = singleLangBtn.querySelector('.lang-text');
+    
+    if (langText) {
+        langText.textContent = currentLang === 'es' ? 'ES' : 'EN';
+    }
+    
+    // Actualizar atributo data-lang
+    singleLangBtn.setAttribute('data-lang', currentLang);
+    
+    console.log('Botón Ley Silla actualizado a:', currentLang);
 }
 
 /**
@@ -638,6 +757,39 @@ function initializeSidebar() {
             toggleSidebar();
         }
     });
+    
+    // Configurar botones de tema en sidebar
+    const sidebarThemeButtons = document.querySelectorAll('.theme-option-sidebar');
+    sidebarThemeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const theme = button.getAttribute('data-theme');
+            APP_STATE.currentTheme = theme;
+            
+            // Aplicar tema
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+            
+            // Guardar en localStorage
+            localStorage.setItem('offiho_theme', theme);
+            
+            // Actualizar botones
+            updateThemeButton();
+            updateSidebarThemeButtons();
+            
+            // Disparar evento
+            document.dispatchEvent(new CustomEvent('themeChanged', {
+                detail: { theme }
+            }));
+            
+            console.log(`Tema cambiado a: ${theme} desde sidebar`);
+        });
+    });
+    
+    // Inicializar estado de botones de tema en sidebar
+    updateSidebarThemeButtons();
     
     console.log('Sidebar inicializado');
 }
@@ -735,6 +887,8 @@ window.OffihoComponents = {
     updateMenu: updateActiveMenuLinks,
     toggleTheme: toggleTheme,
     toggleLanguage: toggleLanguage,
+    changeLanguage: changeLanguage,
+    updateLanguageVisibility: updateLanguageVisibility,
     getCurrentTheme: () => APP_STATE.currentTheme,
     getCurrentLanguage: () => APP_STATE.currentLanguage
 };
