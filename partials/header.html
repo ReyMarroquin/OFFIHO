@@ -1,0 +1,166 @@
+<!-- Header Principal -->
+<header class="main-header">
+    <!-- Navegación principal -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-container">
+                <!-- Logo y botón del sidebar -->
+                <div class="logo-container">
+                    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Abrir menú">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <a href="index.html" class="logo-link">
+                        <img src="Imagenes/Logo.png" alt="OFFIHO" class="logo-img">
+                        <div class="logo-text">
+                            <span class="logo-main">OFFIHO</span>
+                            <span class="logo-tagline">Ergonomía y Confort</span>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Menú de navegación principal -->
+                <div class="nav-main-container">
+                    <ul class="nav-menu">
+                        <li><a href="index.html" class="nav-link">Inicio</a></li>
+                        <li><a href="marcas.html" class="nav-link">Marcas</a></li>
+                        <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+                        <li><a href="ley-silla.html" class="nav-link">Ley Silla</a></li>
+                        <li><a href="contactanos.html" class="nav-link">Contáctanos</a></li>
+                    </ul>
+                </div>
+
+                <!-- Acciones del usuario -->
+                <div class="nav-actions">
+                    <!-- Botón de cambio de idioma (sin dropdown) -->
+                    <button class="nav-action-btn language-toggle-btn" id="languageToggle">
+                        <span class="language-flag">ES</span>
+                        <span class="language-code" style="display: none;">ES</span>
+                    </button>
+                    
+                    <!-- Botón de cambio de tema -->
+                    <button class="nav-action-btn theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                        <i class="fas fa-moon"></i>
+                        <span class="theme-text">Oscuro</span>
+                    </button>
+                    
+                    <!-- Botón de cotización -->
+                    <a href="cotizacion.html" class="nav-action-btn quote-btn">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <span class="action-text">Cotizar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Overlay para fondo oscuro del sidebar -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- Barra lateral (Sidebar) -->
+<aside class="sidebar" id="sidebar">
+    <!-- Logo en sidebar -->
+    <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <img src="Imagenes/Logo.png" alt="OFFIHO" class="sidebar-logo-img">
+            <div class="sidebar-logo-text">
+                <div class="logo-main">OFFIHO</div>
+                <div class="logo-subtitle">Mobiliario de Oficina</div>
+            </div>
+        </div>
+        <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar menú">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Menú de navegación -->
+    <div class="sidebar-section">
+        <div class="section-title">
+            <i class="fas fa-compass"></i>
+            Navegación
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-item">
+                <a href="index.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-home"></i></span>
+                    <span>Inicio</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="marcas.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-tags"></i></span>
+                    <span>Marcas</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="catalogo.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-box-open"></i></span>
+                    <span>Catálogo</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="ley-silla.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-gavel"></i></span>
+                    <span>Ley Silla</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="contactanos.html" class="menu-link">
+                    <span class="menu-icon"><i class="fas fa-address-book"></i></span>
+                    <span>Contáctanos</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Botón de idioma en sidebar (también sin selector) -->
+    <div class="sidebar-section">
+        <div class="section-title">
+            <i class="fas fa-globe"></i>
+            Idioma
+        </div>
+        <div class="sidebar-language-simple">
+            <button class="language-toggle-sidebar" id="languageToggleSidebar">
+                <span class="language-flag-sidebar">🇺🇸</span>
+                <span class="language-text-sidebar">English</span>
+                <span class="language-switch-text">Cambiar a Español</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Botón de tema en sidebar -->
+    <div class="sidebar-section">
+        <div class="section-title">
+            <i class="fas fa-palette"></i>
+            Tema
+        </div>
+        <div class="sidebar-theme">
+            <button class="theme-option-sidebar" data-theme="light">
+                <i class="fas fa-sun"></i>
+                <span>Claro</span>
+            </button>
+            <button class="theme-option-sidebar" data-theme="dark">
+                <i class="fas fa-moon"></i>
+                <span>Oscuro</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Información de contacto -->
+    <div class="sidebar-section">
+        <div class="section-title">
+            <i class="fas fa-headset"></i>
+            Contacto
+        </div>
+        <div class="sidebar-contact">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <span>(01) 123 4567</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>info@offiho.com</span>
+            </div>
+        </div>
+    </div>
+</aside>
