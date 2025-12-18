@@ -3,62 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFIHO - Contáctanos</title>
-
+    <title>
+        <span class="es-lang">OFFIHO - Contáctanos</span>
+        <span class="en-lang">OFFIHO - Contact Us</span>
+    </title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/contactanos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="theme-transition">
-    <!-- El header se cargará dinámicamente aquí -->
+    <!-- Header cargado dinámicamente -->
     
-    <!-- Contenido principal -->
     <main class="main-content">
-        <div class="hero-section">
-            <h1 class="hero-title">Contáctanos</h1>
-            <p class="hero-subtitle">
-                Estamos aquí para ayudarte a encontrar la mejor solución ergonómica para tu espacio de trabajo.
-            </p>
-        </div>
-
-        <div class="content-grid">
-            <div class="content-card">
-                <div class="card-icon">
-                    <i class="fas fa-phone"></i>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1 class="contact-hero-title">
+                        <span class="es-lang">Contáctanos</span>
+                        <span class="en-lang">Contact Us</span>
+                    </h1>
+                    <p class="contact-hero-subtitle">
+                        <span class="es-lang">Estamos aquí para ayudarte a encontrar la mejor solución ergonómica para tu espacio de trabajo</span>
+                        <span class="en-lang">We're here to help you find the best ergonomic solution for your workspace</span>
+                    </p>
                 </div>
-                <h3 class="card-title">Teléfono</h3>
-                <p class="card-text">
-                    (01) 123 4567<br>
-                    Lunes a Viernes: 9:00 AM - 6:00 PM
-                </p>
             </div>
+        </section>
 
-            <div class="content-card">
-                <div class="card-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <h3 class="card-title">Email</h3>
-                <p class="card-text">
-                    info@offiho.com<br>
-                    ventas@offiho.com
-                </p>
-            </div>
+        <!-- Información de Contacto -->
+        <section class="contact-info-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Información de contacto -->
+                    <div class="contact-info-cards">
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="contact-info-title">
+                                    <span class="es-lang">Dirección</span>
+                                    <span class="en-lang">Address</span>
+                                </h3>
+                                <p class="contact-info-text">
+                                    Av. Oficina 123, Lima, Perú<br>
+                                    <span class="es-lang">Distrito: San Isidro</span>
+                                    <span class="en-lang">District: San Isidro</span>
+                                </p>
+                            </div>
+                        </div>
 
-            <div class="content-card">
-                <div class="card-icon">
-                    <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="contact-info-title">
+                                    <span class="es-lang">Teléfono</span>
+                                    <span class="en-lang">Phone</span>
+                                </h3>
+                                <p class="contact-info-text">
+                                    (01) 123 4567<br>
+                                    (01) 765 4321
+                                </p>
+                                <p class="contact-info-note">
+                                    <span class="es-lang">Lunes a Viernes: 9:00 AM - 6:00 PM</span>
+                                    <span class="en-lang">Monday to Friday: 9:00 AM - 6:00 PM</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="contact-info-title">
+                                    <span class="es-lang">Email</span>
+                                    <span class="en-lang">Email</span>
+                                </h3>
+                                <p class="contact-info-text">
+                                    ventas@offiho.com<br>
+                                    soporte@offiho.com<br>
+                                    info@offiho.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h3 class="contact-info-title">
+                                    <span class="es-lang">Horario de Atención</span>
+                                    <span class="en-lang">Business Hours</span>
+                                </h3>
+                                <p class="contact-info-text">
+                                    <span class="es-lang">Lunes a Viernes: 9:00 AM - 6:00 PM</span>
+                                    <span class="en-lang">Monday to Friday: 9:00 AM - 6:00 PM</span><br>
+                                    <span class="es-lang">Sábados: 9:00 AM - 1:00 PM</span>
+                                    <span class="en-lang">Saturdays: 9:00 AM - 1:00 PM</span><br>
+                                    <span class="es-lang">Domingos: Cerrado</span>
+                                    <span class="en-lang">Sundays: Closed</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mapa -->
+                    <div class="contact-map">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <h3>
+                                <span class="es-lang">Ubicación de nuestra oficina</span>
+                                <span class="en-lang">Our office location</span>
+                            </h3>
+                            <p>
+                                <span class="es-lang">Av. Oficina 123, Lima, Perú</span>
+                                <span class="en-lang">Av. Oficina 123, Lima, Peru</span>
+                            </p>
+                            <a href="https://maps.google.com/?q=Av.+Oficina+123,+Lima,+Perú" target="_blank" class="btn btn-primary">
+                                <span class="es-lang">Ver en Google Maps</span>
+                                <span class="en-lang">View on Google Maps</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="card-title">Dirección</h3>
-                <p class="card-text">
-                    Av. Oficina 123, Lima<br>
-                    Perú
-                </p>
             </div>
-        </div>
+        </section>
+
+        <!-- Formulario de Contacto -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="es-lang">Envíanos un Mensaje</span>
+                        <span class="en-lang">Send us a Message</span>
+                    </h2>
+                    <p class="section-description">
+                        <span class="es-lang">Completa el formulario y nos pondremos en contacto contigo a la brevedad</span>
+                        <span class="en-lang">Complete the form and we'll contact you as soon as possible</span>
+                    </p>
+                </div>
+
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nombre">
+                                    <span class="es-lang">Nombre completo *</span>
+                                    <span class="en-lang">Full name *</span>
+                                </label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">
+                                    <span class="es-lang">Empresa</span>
+                                    <span class="en-lang">Company</span>
+                                </label>
+                                <input type="text" id="empresa" name="empresa">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">
+                                    <span class="es-lang">Correo electrónico *</span>
+                                    <span class="en-lang">Email *</span>
+                                </label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">
+                                    <span class="es-lang">Teléfono *</span>
+                                    <span class="en-lang">Phone *</span>
+                                </label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">
+                                <span class="es-lang">Asunto *</span>
+                                <span class="en-lang">Subject *</span>
+                            </label>
+                            <select id="asunto" name="asunto" required>
+                                <option value="">
+                                    <span class="es-lang">Selecciona un asunto</span>
+                                    <span class="en-lang">Select a subject</span>
+                                </option>
+                                <option value="cotizacion">
+                                    <span class="es-lang">Solicitud de cotización</span>
+                                    <span class="en-lang">Quote request</span>
+                                </option>
+                                <option value="producto">
+                                    <span class="es-lang">Consulta sobre productos</span>
+                                    <span class="en-lang">Product inquiry</span>
+                                </option>
+                                <option value="soporte">
+                                    <span class="es-lang">Soporte técnico</span>
+                                    <span class="en-lang">Technical support</span>
+                                </option>
+                                <option value="garantia">
+                                    <span class="es-lang">Garantía</span>
+                                    <span class="en-lang">Warranty</span>
+                                </option>
+                                <option value="distribuidor">
+                                    <span class="es-lang">Ser distribuidor</span>
+                                    <span class="en-lang">Become a distributor</span>
+                                </option>
+                                <option value="otro">
+                                    <span class="es-lang">Otro</span>
+                                    <span class="en-lang">Other</span>
+                                </option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">
+                                <span class="es-lang">Mensaje *</span>
+                                <span class="en-lang">Message *</span>
+                            </label>
+                            <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacidad" name="privacidad" required>
+                            <label for="privacidad">
+                                <span class="es-lang">Acepto la </span>
+                                <span class="en-lang">I accept the </span>
+                                <a href="privacidad.html">
+                                    <span class="es-lang">Política de Privacidad</span>
+                                    <span class="en-lang">Privacy Policy</span>
+                                </a>
+                                <span class="es-lang"> *</span>
+                                <span class="en-lang"> *</span>
+                            </label>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i>
+                                <span class="es-lang">Enviar Mensaje</span>
+                                <span class="en-lang">Send Message</span>
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <span class="es-lang">Limpiar Formulario</span>
+                                <span class="en-lang">Clear Form</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas Frecuentes -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <span class="es-lang">Preguntas Frecuentes</span>
+                        <span class="en-lang">Frequently Asked Questions</span>
+                    </h2>
+                    <p class="section-description">
+                        <span class="es-lang">Respuestas a las preguntas más comunes sobre nuestros productos y servicios</span>
+                        <span class="en-lang">Answers to the most common questions about our products and services</span>
+                    </p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>
+                                <span class="es-lang">¿Cuál es el tiempo de entrega?</span>
+                                <span class="en-lang">What is the delivery time?</span>
+                            </h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                <span class="es-lang">El tiempo de entrega varía según la ubicación y disponibilidad del producto. En Lima Metropolitana entregamos en 24-48 horas. Para provincias, el tiempo estimado es de 3-7 días hábiles.</span>
+                                <span class="en-lang">Delivery time varies according to location and product availability. In Metropolitan Lima we deliver within 24-48 hours. For other provinces, estimated time is 3-7 business days.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>
+                                <span class="es-lang">¿Ofrecen instalación de los productos?</span>
+                                <span class="en-lang">Do you offer product installation?</span>
+                            </h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                <span class="es-lang">Sí, incluimos instalación profesional sin costo adicional en Lima Metropolitana. Para instalaciones fuera de Lima, contáctanos para coordinar los detalles.</span>
+                                <span class="en-lang">Yes, we include professional installation at no additional cost in Metropolitan Lima. For installations outside Lima, contact us to coordinate details.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>
+                                <span class="es-lang">¿Cuál es la política de garantías?</span>
+                                <span class="en-lang">What is the warranty policy?</span>
+                            </h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                <span class="es-lang">Todos nuestros productos tienen garantía de 2 años contra defectos de fabricación. Ofrecemos servicio técnico especializado en todo el país.</span>
+                                <span class="en-lang">All our products have a 2-year warranty against manufacturing defects. We offer specialized technical service throughout the country.</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>
+                                <span class="es-lang">¿Tienen showroom para ver los productos?</span>
+                                <span class="en-lang">Do you have a showroom to see the products?</span>
+                            </h3>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>
+                                <span class="es-lang">Sí, tenemos showroom en nuestra oficina principal en San Isidro. Puedes agendar una cita para visitarnos y probar nuestros productos.</span>
+                                <span class="en-lang">Yes, we have a showroom at our main office in San Isidro. You can schedule an appointment to visit us and try our products.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Flotante -->
+        <a href="https://wa.me/51912345678" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+            <span class="whatsapp-text">
+                <span class="es-lang">WhatsApp</span>
+                <span class="en-lang">WhatsApp</span>
+            </span>
+        </a>
     </main>
 
-    <!-- El footer se cargará dinámicamente aquí -->
+    <!-- Footer cargado dinámicamente -->
+    <div id="footer-container"></div>
     
-    <!-- Script para cargar componentes -->
+    <!-- Scripts -->
     <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/contactanos.js"></script>
 </body>
 </html>
