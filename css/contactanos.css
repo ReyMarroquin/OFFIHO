@@ -373,7 +373,7 @@
 
 /* ===== MODO OSCURO ===== */
 .dark-mode .contact-hero {
-    background: linear-gradient(135deg, rgba(31, 98, 145, 0.9), rgba(29, 154, 76, 0.9)), 
+    background: linear-gradient(135deg, rgba(31, 58, 84, 0.9), rgba(26, 42, 58, 0.9)), 
                 url('../Imagenes/contact-hero.jpg') center/cover no-repeat;
 }
 

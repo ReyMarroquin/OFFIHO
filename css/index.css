@@ -358,6 +358,19 @@
 /* ===== MODO OSCURO ===== */
 
 /* Variables para modo oscuro */
+
+
+.dark-mode .hero-section {
+    background: linear-gradient(135deg, rgba(31, 58, 84, 0.9), rgba(26, 42, 58, 0.9)), 
+                url('../Imagenes/hero-bg.jpg') center/cover no-repeat;
+    color: white;
+    padding: 140px 0 100px;
+    margin-top: 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
 .dark-mode .categories-section {
     background: var(--bg-dark-secondary);
 }
@@ -595,3 +608,4 @@
     margin: 0 auto;
     padding: 0 20px;
 }
+
