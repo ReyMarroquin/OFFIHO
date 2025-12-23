@@ -3,298 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFIHO - Mobiliario Ergonómico de Oficina</title>
+    <title>Ergonomía y Confort | Home</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="theme-transition">
-    <!-- Header cargado dinámicamente -->
-    
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">
-                        <span class="es-lang">Soluciones Ergonómicas para Espacios de Trabajo</span>
-                        <span class="en-lang">Ergonomic Solutions for Workspaces</span>
-                    </h1>
-                    <p class="hero-subtitle">
-                        <span class="es-lang">Mobiliario de oficina diseñado para maximizar la productividad, confort y bienestar laboral.</span>
-                        <span class="en-lang">Office furniture designed to maximize productivity, comfort, and workplace wellness.</span>
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="catalogo.html" class="btn btn-primary">
-                            <span class="es-lang">Ver Catálogo</span>
-                            <span class="en-lang">View Catalog</span>
-                        </a>
-                        <a href="contactanos.html" class="btn btn-secondary">
-                            <span class="es-lang">Contactar</span>
-                            <span class="en-lang">Contact Us</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+<body>
 
-        <!-- Categorías -->
-        <section class="categories-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <span class="es-lang">Nuestras Categorías</span>
-                        <span class="en-lang">Our Categories</span>
-                    </h2>
-                    <p class="section-description">
-                        <span class="es-lang">Productos especializados para cada necesidad</span>
-                        <span class="en-lang">Specialized products for every need</span>
-                    </p>
-                </div>
+    <nav class="navbar">
+    <div class="logo">
+        <a href="index.html">
+            <img src="Imagenes/Logo.png" alt="Ergonomía y Confort - Logo" class="logo-img">
+        </a>
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active">Inicio</a></li>
+        <li><a href="marcas.html">Marcas</a></li>
+        <li><a href="ley-silla.html">Ley Silla</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+    </ul>
+        <a href="tel:6566877854" class="btn-phone-minimal">
+            <div class="dot-live"></div>
+            <span class="phone-label">Atención:</span>
+            <span class="phone-number">656-687-78-54</span>
+        </a>
+</nav>
 
-                <div class="categories-grid">
-                    <!-- Categoría 1 -->
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                        <div class="category-content">
-                            <h3 class="category-title">
-                                <span class="es-lang">Ejecutivos</span>
-                                <span class="en-lang">Executive</span>
-                            </h3>
-                            <p class="category-description">
-                                <span class="es-lang">Sillas de alta gama para directivos y profesionales</span>
-                                <span class="en-lang">High-end chairs for executives and professionals</span>
-                            </p>
-                            <a href="catalogo.html?categoria=ejecutivos" class="category-link">
-                                <span class="es-lang">Ver productos</span>
-                                <span class="en-lang">View products</span> <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Categoría 2 -->
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="category-content">
-                            <h3 class="category-title">
-                                <span class="es-lang">Operativos</span>
-                                <span class="en-lang">Operational</span>
-                            </h3>
-                            <p class="category-description">
-                                <span class="es-lang">Mobiliario para equipos de trabajo</span>
-                                <span class="en-lang">Furniture for work teams</span>
-                            </p>
-                            <a href="catalogo.html?categoria=operativos" class="category-link">
-                                <span class="es-lang">Ver productos</span>
-                                <span class="en-lang">View products</span> <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Categoría 3 -->
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-industry"></i>
-                        </div>
-                        <div class="category-content">
-                            <h3 class="category-title">
-                                <span class="es-lang">Industrial</span>
-                                <span class="en-lang">Industrial</span>
-                            </h3>
-                            <p class="category-description">
-                                <span class="es-lang">Resistentes y funcionales para entornos industriales</span>
-                                <span class="en-lang">Resistant and functional for industrial environments</span>
-                            </p>
-                            <a href="catalogo.html?categoria=industrial" class="category-link">
-                                <span class="es-lang">Ver productos</span>
-                                <span class="en-lang">View products</span> <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Categoría 4 -->
-                    <div class="category-card">
-                        <div class="category-icon">
-                            <i class="fas fa-door-open"></i>
-                        </div>
-                        <div class="category-content">
-                            <h3 class="category-title">
-                                <span class="es-lang">Visitantes</span>
-                                <span class="en-lang">Visitors</span>
-                            </h3>
-                            <p class="category-description">
-                                <span class="es-lang">Para recepción y áreas de espera</span>
-                                <span class="en-lang">For reception and waiting areas</span>
-                            </p>
-                            <a href="catalogo.html?categoria=visitantes" class="category-link">
-                                <span class="es-lang">Ver productos</span>
-                                <span class="en-lang">View products</span> <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Marcas Destacadas -->
-        <section class="brands-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <span class="es-lang">Nuestras Marcas</span>
-                        <span class="en-lang">Our Brands</span>
-                    </h2>
-                </div>
+    <section class="hero">
+        <div class="hero-container">
+            
+            <div class="hero-content">
+                <span class="badge">Innovación en Oficina</span>
+                <h1>Diseñamos el <br><span>Confort</span> de tu Futuro</h1>
+                <p>Transforma tu espacio de trabajo con soluciones ergonómicas inteligentes que se adaptan a tu cuerpo y potencian tu productividad.</p>
                 
-                <div class="brands-grid">
-                    <div class="brand-card">
-                        <div class="brand-logo">LUKE</div>
-                        <h3 class="brand-name">Luke</h3>
-                        <p class="brand-description">
-                            <span class="es-lang">Línea ejecutiva premium</span>
-                            <span class="en-lang">Premium executive line</span>
-                        </p>
-                    </div>
-                    
-                    <div class="brand-card">
-                        <div class="brand-logo">TEKSI</div>
-                        <h3 class="brand-name">Teksi</h3>
-                        <p class="brand-description">
-                            <span class="es-lang">Ergonomía operativa</span>
-                            <span class="en-lang">Operational ergonomics</span>
-                        </p>
-                    </div>
-                    
-                    <div class="brand-card">
-                        <div class="brand-logo">KIPALI</div>
-                        <h3 class="brand-name">Kipali</h3>
-                        <p class="brand-description">
-                            <span class="es-lang">Resistencia industrial</span>
-                            <span class="en-lang">Industrial resistance</span>
-                        </p>
-                    </div>
-                    
-                    <div class="brand-card">
-                        <div class="brand-logo">TONNATI</div>
-                        <h3 class="brand-name">Tonnati</h3>
-                        <p class="brand-description">
-                            <span class="es-lang">Diseño contemporáneo</span>
-                            <span class="en-lang">Contemporary design</span>
-                        </p>
-                    </div>
+                <div class="hero-actions">
+                    <button class="btn-main">Explorar Catálogo <i class="fas fa-arrow-right"></i></button>
+                    <button class="btn-secondary">Ver Marcas</button>
                 </div>
             </div>
-        </section>
 
-        <!-- Recursos -->
-        <section class="resources-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">
-                        <span class="es-lang">Recursos</span>
-                        <span class="en-lang">Resources</span>
-                    </h2>
-                    <p class="section-description">
-                        <span class="es-lang">Todo lo que necesitas para tu compra</span>
-                        <span class="en-lang">Everything you need for your purchase</span>
-                    </p>
-                </div>
-
-                <div class="resources-grid">
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">
-                                <span class="es-lang">Listas de Precios</span>
-                                <span class="en-lang">Price Lists</span>
-                            </h3>
-                            <p class="resource-description">
-                                <span class="es-lang">Descarga nuestras listas actualizadas</span>
-                                <span class="en-lang">Download our updated lists</span>
-                            </p>
-                            <a href="#" class="resource-link">
-                                <span class="es-lang">Descargar</span>
-                                <span class="en-lang">Download</span>
-                            </a>
+            <div class="hero-visual">
+                <div class="main-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&q=80&w=800" alt="Oficina Moderna" class="main-img">
+                    
+                    <div class="glass-card floating">
+                        <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                        <div>
+                            <h4>Salud Postural</h4>
+                            <p>Optimizado al 98%</p>
                         </div>
                     </div>
 
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-video"></i>
-                        </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">
-                                <span class="es-lang">Video Corporativo</span>
-                                <span class="en-lang">Corporate Video</span>
-                            </h3>
-                            <p class="resource-description">
-                                <span class="es-lang">Conoce nuestra empresa</span>
-                                <span class="en-lang">Get to know our company</span>
-                            </p>
-                            <a href="#" class="resource-link">
-                                <span class="es-lang">Ver video</span>
-                                <span class="en-lang">Watch video</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-clipboard-check"></i>
-                        </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">
-                                <span class="es-lang">Ley Silla</span>
-                                <span class="en-lang">Chair Law</span>
-                            </h3>
-                            <p class="resource-description">
-                                <span class="es-lang">Información sobre normativas</span>
-                                <span class="en-lang">Information about regulations</span>
-                            </p>
-                            <a href="ley-silla.html" class="resource-link">
-                                <span class="es-lang">Consultar</span>
-                                <span class="en-lang">Consult</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="resource-card">
-                        <div class="resource-icon">
-                            <i class="fas fa-headset"></i>
-                        </div>
-                        <div class="resource-content">
-                            <h3 class="resource-title">
-                                <span class="es-lang">Soporte</span>
-                                <span class="en-lang">Support</span>
-                            </h3>
-                            <p class="resource-description">
-                                <span class="es-lang">Asistencia técnica y garantías</span>
-                                <span class="en-lang">Technical assistance and warranties</span>
-                            </p>
-                            <a href="#" class="resource-link">
-                                <span class="es-lang">Contactar</span>
-                                <span class="en-lang">Contact</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <!-- Footer cargado dinámicamente -->
+        </div>
+
+        <div class="glow-sphere"></div>
+    </section>
+
+    <section class="benefits-section">
+        <div class="benefits-container">
+            
+            <div class="benefits-intro">
+                <span class="badge">Nuestros Acuerdos</span>
+                <h2>Beneficios para la <br><span>Optimización</span> de tu Espacio</h2>
+                <p>Nuestros programas están respaldados por estándares de alta calidad para garantizar el máximo bienestar y productividad en tu formación y trabajo diario.</p>
+                <button class="btn-main">Solicitar Evaluación Gratuita</button>
+            </div>
+
+           <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Salud Protegida</h3>
+                    <p>Reduce hasta en un 70% los dolores de espalda y cuello.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-brain"></i></div>
+                    <h3>Mente Enfocada</h3>
+                    <p>Mejora la concentración y reduce la fatiga mental.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Productividad +</h3>
+                    <p>Incrementa la eficiencia del trabajo hasta en un 25%.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>Bienestar Garantizado</h3>
+                    <p>Mejora el estado de ánimo y la satisfacción laboral.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Inversión Segura</h3>
+                    <p>Reduce el ausentismo y los costos por lesiones.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="b-icon"><i class="fas fa-gavel"></i></div>
+                    <h3>Cumplimiento Legal</h3>
+                    <p>Tu espacio cumple con la Ley de la Silla y normativas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="services-header">
+            <h2>Nuestros <span>servicios</span></h2>
+        </div>
+
+        <div class="services-container">
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="Imagenes/ofi_1.png" alt="Consultoría NR">
+                </div>
+                <div class="service-content">
+                    <h3>Combo de Servicios en Atendimiento a las Normas Reglamentadoras (NRs)</h3>
+                    <p>Tenha uma solução completa para sua empresa, com pacotes personalizados que englobam uma variedade de serviços essenciais para estar conforme as normas. Com gestão visual gerencial no Power BI, você terá uma visão clara e estratégica de suas ações.</p>
+                    <button class="btn-outline">Realizar avaliação gratuita</button>
+                </div>
+            </div>
+
+            <div class="service-item reverse">
+                <div class="service-image">
+                    <img src="Imagenes/sillas_industriales.png" alt="Inspección Drone">
+                </div>
+                <div class="service-content">
+                    <h3>Inspeção Visual e Fotográfica com Drone</h3>
+                    <p>Utilize a tecnologia de ponta para realizar inspeções detalhadas em locais de difícil acesso. Reduza riscos, melhore a eficiência e tome decisões embasadas em imagens precisas.</p>
+                    <button class="btn-outline">Realizar avaliação gratuita</button>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="Imagenes/ejecutivas.png" alt="Treinamento NR">
+                </div>
+                <div class="service-content">
+                    <h3>Treinamento de NR em Centro de Treinamento Moderno</h3>
+                    <p>Inove sua capacitação com nossos simuladores reais e pratique as situações de risco em um ambiente controlado. Destaque-se no mercado e garanta a segurança e competência de sua equipe.</p>
+                    <button class="btn-outline">Realizar avaliação gratuita</button>
+                </div>
+            </div>
+
+            <div class="service-item reverse">
+                <div class="service-image">
+                    <img src="Imagenes/visitante_i.png" alt="Documentos EHS">
+                </div>
+                <div class="service-content">
+                    <h3>Modelos de Documentos de EHS Conformes</h3>
+                    <p>Facilite a elaboração de documentos essenciais com nossos modelos alinhados à legislação atual. Economize tempo e garanta a qualidade de suas ações em segurança do trabalho.</p>
+                    <button class="btn-outline">Realizar avaliação gratuita</button>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Footer cargado dinámicamente -->
     <div id="footer-container"></div>
-    
-    <!-- Scripts -->
+
     <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/index.js"></script>
+    
 </body>
 </html>
