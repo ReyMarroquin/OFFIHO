@@ -12,6 +12,12 @@
     overflow: hidden;
 }
 
+.container{
+    max-width: 85%;
+}
+
+
+
 .brands-hero::before {
     content: '';
     position: absolute;
