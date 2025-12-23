@@ -369,14 +369,6 @@ function setupWhatsAppButton() {
     whatsappBtn.href += `?text=${encodeURIComponent(message)}`;
 }
 
-// Esperar a que carguen los componentes
-document.addEventListener('componentsLoaded', initContactPage);
-
-// Si los componentes ya están cargados, inicializar inmediatamente
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(initContactPage, 500);
-    });
-} else {
-    setTimeout(initContactPage, 500);
-}
+document.addEventListener('DOMContentLoaded', () => {
+    initContactPage();
+});

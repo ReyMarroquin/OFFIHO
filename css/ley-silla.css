@@ -12,6 +12,10 @@
     overflow: hidden;
 }
 
+.container{
+    max-width: 85%;
+}
+
 .law-hero::before {
     content: '';
     position: absolute;

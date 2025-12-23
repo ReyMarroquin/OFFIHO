@@ -436,6 +436,8 @@ function addLawStyles() {
         .law-timeline-container {
             padding: 80px 0;
             background: white;
+            width: 85%;
+            margin-left:7.5%;
         }
         
         .dark-mode .law-facts-container,
