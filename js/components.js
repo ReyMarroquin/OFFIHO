@@ -1,13 +1,11 @@
 /**
- * components.js - Carga dinámicamente el header y footer
+ * components.js - Carga dinámicamente el footer
  */
 
 // Configuración
 const CONFIG = {
-    headerPath: 'partials/header.html',
     footerPath: 'partials/footer.html',
     cssPaths: {
-        header: 'css/header.css',
         footer: 'css/footer.css'
     }
 };
@@ -163,29 +161,6 @@ function isCSSLoaded(path) {
 }
 
 /**
- * Carga el header y sus dependencias
- */
-async function loadHeader() {
-    try {
-        // Cargar CSS del header si no está cargado
-        await loadCSS(CONFIG.cssPaths.header);
-        
-        // Cargar el HTML del header
-        const headerHTML = await loadComponent(CONFIG.headerPath);
-        
-        if (headerHTML) {
-            console.log('✅ Header cargado exitosamente');
-            return true;
-        }
-        
-        return false;
-    } catch (error) {
-        console.error('Error cargando header:', error);
-        return false;
-    }
-}
-
-/**
  * Carga el footer y sus dependencias
  */
 async function loadFooter() {
@@ -229,21 +204,9 @@ function updateActiveMenuLinks() {
     
     // Pequeño delay para asegurar que el DOM esté listo
     setTimeout(() => {
-        // Actualizar enlaces del menú principal
-        const navLinks = document.querySelectorAll('.nav-link');
+        // Actualizar enlaces del menú principal (navbar)
+        const navLinks = document.querySelectorAll('.navbar .nav-links a');
         navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href');
-            link.classList.remove('active');
-            
-            if (linkPath === currentPage || 
-                (currentPath.endsWith('/') && linkPath === 'index.html')) {
-                link.classList.add('active');
-            }
-        });
-        
-        // Actualizar enlaces del sidebar
-        const menuLinks = document.querySelectorAll('.menu-link');
-        menuLinks.forEach(link => {
             const linkPath = link.getAttribute('href');
             link.classList.remove('active');
             
@@ -272,9 +235,6 @@ function initializeBasicFeatures() {
     // Actualizar enlaces del menú
     updateActiveMenuLinks();
     
-    // Inicializar sidebar
-    initializeSidebar();
-    
     // Inicializar botones de idioma y tema
     initializeLanguageButtons();
     initializeThemeButtons();
@@ -282,7 +242,6 @@ function initializeBasicFeatures() {
     // Actualizar botones visualmente
     updateLanguageButtons();
     updateThemeButton();
-    updateSidebarThemeButtons();
     
     console.log('Funcionalidades básicas inicializadas');
 }
@@ -387,25 +346,13 @@ function updateLanguageVisibility() {
  * Inicializa los botones de tema
  */
 function initializeThemeButtons() {
-    // Botón de tema en header
+    // Buscar botón de tema en la página actual
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn && !themeBtn.dataset.listenerAdded) {
         themeBtn.addEventListener('click', toggleTheme);
         themeBtn.dataset.listenerAdded = 'true';
-        console.log('Botón de tema del header inicializado');
+        console.log('Botón de tema inicializado');
     }
-    
-    // Botones de tema en sidebar
-    const sidebarThemeButtons = document.querySelectorAll('.theme-option-sidebar');
-    sidebarThemeButtons.forEach(button => {
-        if (!button.dataset.listenerAdded) {
-            button.addEventListener('click', () => {
-                const theme = button.getAttribute('data-theme');
-                changeTheme(theme);
-            });
-            button.dataset.listenerAdded = 'true';
-        }
-    });
     
     console.log('Botones de tema inicializados');
 }
@@ -434,7 +381,6 @@ function changeTheme(theme) {
     
     // Actualizar botones
     updateThemeButton();
-    updateSidebarThemeButtons();
     
     // Disparar evento
     document.dispatchEvent(new CustomEvent('themeChanged', {
@@ -453,7 +399,7 @@ function toggleTheme() {
 }
 
 /**
- * Actualiza el botón de cambio de tema en el header
+ * Actualiza el botón de cambio de tema
  */
 function updateThemeButton() {
     const themeBtn = document.getElementById('themeToggle');
@@ -477,48 +423,15 @@ function updateThemeButton() {
 }
 
 /**
- * Actualiza los botones de tema en el sidebar
- */
-function updateSidebarThemeButtons() {
-    const themeButtons = document.querySelectorAll('.theme-option-sidebar');
-    themeButtons.forEach(button => {
-        const theme = button.getAttribute('data-theme');
-        if (theme === APP_STATE.currentTheme) {
-            button.classList.add('active');
-        } else {
-            button.classList.remove('active');
-        }
-    });
-    
-    console.log('Botones de tema del sidebar actualizados');
-}
-
-/**
  * Inicializa los botones de idioma
  */
 function initializeLanguageButtons() {
-    // Botón en header (OFFIHO)
+    // Botón de idioma en la página (si existe)
     const headerLangBtn = document.getElementById('languageToggle');
     if (headerLangBtn && !headerLangBtn.dataset.listenerAdded) {
         headerLangBtn.addEventListener('click', toggleLanguage);
         headerLangBtn.dataset.listenerAdded = 'true';
-        console.log('Botón de idioma del header inicializado');
-    }
-    
-    // Botón en sidebar (OFFIHO)
-    const sidebarLangBtn = document.getElementById('languageToggleSidebar');
-    if (sidebarLangBtn && !sidebarLangBtn.dataset.listenerAdded) {
-        sidebarLangBtn.addEventListener('click', toggleLanguage);
-        sidebarLangBtn.dataset.listenerAdded = 'true';
-        console.log('Botón de idioma del sidebar inicializado');
-    }
-    
-    // Botón de Ley Silla (si existe en la página)
-    const singleLangBtn = document.getElementById('singleLangToggle');
-    if (singleLangBtn && !singleLangBtn.dataset.listenerAdded) {
-        singleLangBtn.addEventListener('click', toggleLanguage);
-        singleLangBtn.dataset.listenerAdded = 'true';
-        console.log('Botón de idioma de Ley Silla inicializado');
+        console.log('Botón de idioma inicializado');
     }
     
     console.log('Botones de idioma inicializados');
@@ -533,27 +446,11 @@ function toggleLanguage() {
     
     // Efecto visual de cambio
     const headerBtn = document.getElementById('languageToggle');
-    const sidebarBtn = document.getElementById('languageToggleSidebar');
-    const singleBtn = document.getElementById('singleLangToggle');
     
     if (headerBtn) {
         headerBtn.classList.add('changing');
         setTimeout(() => {
             headerBtn.classList.remove('changing');
-        }, 400);
-    }
-    
-    if (sidebarBtn) {
-        sidebarBtn.classList.add('changing');
-        setTimeout(() => {
-            sidebarBtn.classList.remove('changing');
-        }, 400);
-    }
-    
-    if (singleBtn) {
-        singleBtn.classList.add('changing');
-        setTimeout(() => {
-            singleBtn.classList.remove('changing');
         }, 400);
     }
 }
@@ -588,9 +485,6 @@ function changeLanguage(lang) {
     // Actualizar botones de idioma (ES/US)
     updateLanguageButtons();
     
-    // Actualizar botón de Ley Silla (si existe)
-    updateSingleLangButton();
-    
     // Disparar evento
     document.dispatchEvent(new CustomEvent('languageChanged', {
         detail: { 
@@ -609,7 +503,7 @@ function updateLanguageButtons() {
     const currentLang = APP_STATE.currentLanguage;
     console.log(`Actualizando botones de idioma a: ${currentLang}`);
     
-    // Botón en header - OFFIHO
+    // Botón en header
     const headerLangBtn = document.getElementById('languageToggle');
     if (headerLangBtn) {
         const flag = headerLangBtn.querySelector('.language-flag');
@@ -629,169 +523,7 @@ function updateLanguageButtons() {
         }
     }
     
-    // Botón en sidebar - OFFIHO
-    const sidebarLangBtn = document.getElementById('languageToggleSidebar');
-    if (sidebarLangBtn) {
-        const flag = sidebarLangBtn.querySelector('.language-flag-sidebar');
-        const text = sidebarLangBtn.querySelector('.language-text-sidebar');
-        const switchText = sidebarLangBtn.querySelector('.language-switch-text');
-        
-        if (flag) {
-            // Mostrar solo texto: ES o US
-            flag.textContent = currentLang === 'es' ? 'ES' : 'US';
-            flag.style.display = 'inline-block';
-            flag.style.fontSize = '16px';
-            flag.style.fontWeight = 'bold';
-            console.log('Sidebar button actualizado a:', flag.textContent);
-        }
-        
-        if (text) {
-            text.style.display = 'none';
-        }
-        
-        if (switchText) {
-            switchText.textContent = currentLang === 'es' ? 
-                'Switch to English' : 'Cambiar a Español';
-        }
-    }
-    
     console.log('Botones de idioma actualizados');
-}
-
-/**
- * Actualiza el botón de idioma de Ley Silla
- */
-function updateSingleLangButton() {
-    const singleLangBtn = document.getElementById('singleLangToggle');
-    if (!singleLangBtn) return;
-    
-    const currentLang = APP_STATE.currentLanguage;
-    const langText = singleLangBtn.querySelector('.lang-text');
-    
-    if (langText) {
-        langText.textContent = currentLang === 'es' ? 'ES' : 'EN';
-    }
-    
-    // Actualizar atributo data-lang
-    singleLangBtn.setAttribute('data-lang', currentLang);
-    
-    console.log('Botón Ley Silla actualizado a:', currentLang);
-}
-
-/**
- * Inicializa el sidebar
- */
-function initializeSidebar() {
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarClose = document.getElementById('sidebarClose');
-    const sidebar = document.getElementById('sidebar');
-    const sidebarOverlay = document.getElementById('sidebarOverlay');
-    
-    if (!sidebarToggle || !sidebar) {
-        console.warn('Elementos del sidebar no encontrados');
-        return;
-    }
-    
-    function toggleSidebar() {
-        const isActive = sidebar.classList.toggle('active');
-        
-        if (sidebarOverlay) {
-            sidebarOverlay.classList.toggle('active');
-        }
-        
-        document.body.classList.toggle('sidebar-active');
-        
-        // Cambiar ícono del botón
-        const icon = sidebarToggle.querySelector('i');
-        if (icon) {
-            icon.className = isActive ? 'fas fa-times' : 'fas fa-bars';
-        }
-        
-        // Prevenir scroll del body cuando el sidebar está abierto
-        document.body.style.overflow = isActive ? 'hidden' : '';
-        
-        console.log(`Sidebar ${isActive ? 'abierto' : 'cerrado'}`);
-    }
-    
-    // Abrir/cerrar sidebar con el botón
-    if (!sidebarToggle.dataset.listenerAdded) {
-        sidebarToggle.addEventListener('click', toggleSidebar);
-        sidebarToggle.dataset.listenerAdded = 'true';
-    }
-    
-    // Cerrar sidebar con el botón de cerrar
-    if (sidebarClose && !sidebarClose.dataset.listenerAdded) {
-        sidebarClose.addEventListener('click', toggleSidebar);
-        sidebarClose.dataset.listenerAdded = 'true';
-    }
-    
-    // Cerrar sidebar con el overlay
-    if (sidebarOverlay && !sidebarOverlay.dataset.listenerAdded) {
-        sidebarOverlay.addEventListener('click', toggleSidebar);
-        sidebarOverlay.dataset.listenerAdded = 'true';
-    }
-    
-    // Cerrar sidebar con la tecla ESC
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && sidebar.classList.contains('active')) {
-            toggleSidebar();
-        }
-    });
-    
-    // Cerrar sidebar al hacer clic en un enlace (en móviles)
-    const menuLinks = document.querySelectorAll('.menu-link, .nav-link');
-    menuLinks.forEach(link => {
-        if (!link.dataset.sidebarListener) {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
-                    toggleSidebar();
-                }
-            });
-            link.dataset.sidebarListener = 'true';
-        }
-    });
-    
-    // Cerrar sidebar en redimensionamiento a escritorio
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768 && sidebar.classList.contains('active')) {
-            toggleSidebar();
-        }
-    });
-    
-    // Configurar botones de tema en sidebar
-    const sidebarThemeButtons = document.querySelectorAll('.theme-option-sidebar');
-    sidebarThemeButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const theme = button.getAttribute('data-theme');
-            APP_STATE.currentTheme = theme;
-            
-            // Aplicar tema
-            if (theme === 'dark') {
-                document.body.classList.add('dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-            }
-            
-            // Guardar en localStorage
-            localStorage.setItem('offiho_theme', theme);
-            
-            // Actualizar botones
-            updateThemeButton();
-            updateSidebarThemeButtons();
-            
-            // Disparar evento
-            document.dispatchEvent(new CustomEvent('themeChanged', {
-                detail: { theme }
-            }));
-            
-            console.log(`Tema cambiado a: ${theme} desde sidebar`);
-        });
-    });
-    
-    // Inicializar estado de botones de tema en sidebar
-    updateSidebarThemeButtons();
-    
-    console.log('Sidebar inicializado');
 }
 
 /**
@@ -801,54 +533,44 @@ async function loadComponents() {
     try {
         console.log('🚀 Iniciando carga de componentes...');
         
-        // Crear contenedor para el footer
+        // Crear contenedor para el footer (si se va a cargar)
         createFooterContainer();
         
-        // Cargar componentes en paralelo para mejor rendimiento
-        const [headerLoaded, footerLoaded] = await Promise.allSettled([
-            loadHeader(),
-            loadFooter()
-        ]);
-        
-        const headerSuccess = headerLoaded.status === 'fulfilled' && headerLoaded.value;
-        const footerSuccess = footerLoaded.status === 'fulfilled' && footerLoaded.value;
-        
-        if (headerSuccess && footerSuccess) {
-            APP_STATE.componentsLoaded = true;
+        // Solo cargar el footer (si existe y se quiere dinámico)
+        if (CONFIG.footerPath) {
+            const footerLoaded = await loadFooter();
             
-            // Inicializar funcionalidades básicas
-            initializeBasicFeatures();
-            
-            // Disparar evento personalizado
-            setTimeout(() => {
-                document.dispatchEvent(new CustomEvent('componentsLoaded', {
-                    detail: { 
-                        components: ['header', 'footer'],
-                        theme: APP_STATE.currentTheme,
-                        language: APP_STATE.currentLanguage
-                    }
-                }));
-            }, 100);
-            
-            console.log('🎉 Todos los componentes cargados exitosamente');
-            
-        } else {
-            const errors = [];
-            if (headerLoaded.status === 'rejected') errors.push('header');
-            if (footerLoaded.status === 'rejected') errors.push('footer');
-            
-            throw new Error(`Error cargando componentes: ${errors.join(', ')}`);
+            if (footerLoaded) {
+                console.log('✅ Footer cargado exitosamente');
+            } else {
+                console.warn('No se pudo cargar el footer');
+            }
         }
+        
+        APP_STATE.componentsLoaded = true;
+        
+        // Inicializar funcionalidades básicas
+        initializeBasicFeatures();
+        
+        // Disparar evento personalizado
+        setTimeout(() => {
+            document.dispatchEvent(new CustomEvent('componentsLoaded', {
+                detail: { 
+                    components: CONFIG.footerPath ? ['footer'] : [],
+                    theme: APP_STATE.currentTheme,
+                    language: APP_STATE.currentLanguage
+                }
+            }));
+        }, 100);
+        
+        console.log('🎉 Componentes inicializados');
         
     } catch (error) {
         console.error('❌ Error al cargar componentes:', error);
         showErrorNotification('Error cargando algunos componentes. La página puede no mostrarse correctamente.');
         
-        // Mostrar contenido principal incluso si falla la carga de componentes
-        const mainContent = document.querySelector('.main-content');
-        if (mainContent) {
-            mainContent.style.display = 'block';
-        }
+        // Aún así inicializar funcionalidades básicas
+        initializeBasicFeatures();
     }
 }
 

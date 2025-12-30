@@ -1,740 +1,843 @@
-/* ===== ESTILOS ESPECÍFICOS PARA MARCAS.HTML ===== */
-
-/* Hero Section de Marcas */
-.brands-hero {
-    background: linear-gradient(135deg, rgba(41, 128, 185, 0.9), rgba(39, 174, 96, 0.8)), 
-                url('../Imagenes/brands-hero.jpg') center/cover no-repeat;
-    color: white;
-    padding: 140px 0 80px;
-    margin-top: 80px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+:root {
+    /* Combinación de ambas paletas */
+    --bg-dark: #0f002b;
+    --bg-gradient: radial-gradient(circle at top right, #3d0099, #0f002b 70%);
+    --primary: #ffffff;
+    --accent: #c5a059; /* Dorado elegante de OFFIHO */
+    --purple-light: #8a2be2;
+    --text-gray: #b0a9c0;
+    --transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.container{
-    max-width: 85%;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-
-.brands-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
-    pointer-events: none;
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--primary);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-.brands-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.brands-hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.brands-hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    opacity: 0.95;
-    line-height: 1.6;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Marcas Destacadas */
-.featured-brands {
-    padding: 80px 0;
-    background: var(--bg-light);
-}
-
-.featured-brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.featured-brand-card {
-    background: white;
-    border-radius: 20px;
-    padding: 40px 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.featured-brand-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
-}
-
-/* Badges de marcas */
-.brand-badge {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: var(--secondary-color);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    z-index: 2;
-}
-
-.brand-badge.premium {
-    background: linear-gradient(135deg, #f39c12, #e74c3c);
-}
-
-.brand-badge.new {
-    background: linear-gradient(135deg, #2ecc71, #27ae60);
-}
-
-/* Logo containers */
-.brand-logo-container {
-    margin-bottom: 25px;
-}
-
-.brand-logo-circle {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    transition: all 0.3s ease;
-}
-
-.featured-brand-card:hover .brand-logo-circle {
-    transform: scale(1.1);
-}
-
-.brand-logo-circle.black {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-}
-
-.brand-logo-text {
-    color: white;
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Contenido de marcas */
-.brand-content {
-    flex: 1;
-    width: 100%;
-}
-
-.brand-name {
-    font-size: 1.8rem;
-    color: var(--dark-color);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.brand-rating {
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-}
-
-.brand-rating i {
-    color: #f39c12;
-    font-size: 1.1rem;
-}
-
-.rating-text {
-    margin-left: 8px;
-    font-weight: 600;
-    color: var(--dark-color);
-    font-size: 1rem;
-}
-
-.brand-description {
-    color: var(--gray-color);
-    line-height: 1.6;
-    margin-bottom: 25px;
-    font-size: 1rem;
-}
-
-.brand-features {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.feature-tag {
-    background: rgba(41, 128, 185, 0.1);
-    color: var(--primary-color);
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: all 0.3s ease;
-}
-
-.feature-tag:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-}
-
-.btn-brand {
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-}
-
-.btn-brand:hover {
-    background: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(41, 128, 185, 0.3);
-    gap: 15px;
-}
-
-.btn-brand i {
-    transition: transform 0.3s ease;
-}
-
-.btn-brand:hover i {
-    transform: translateX(5px);
-}
-
-/* Todas las Marcas */
-.all-brands-section {
-    padding: 80px 0;
-    background: white;
-}
-
-.all-brands-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.brand-card {
-    background: var(--bg-light);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.brand-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
-}
-
-.brand-card-header {
-    background: white;
-    padding: 25px;
+/* --- Navbar (Estilo MenteCriativa) --- */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 30px 8%;
+    position: relative;
+    z-index: 100;
 }
 
-.brand-logo-small {
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--primary-color);
-    background: rgba(41, 128, 185, 0.1);
-    padding: 10px 15px;
-    border-radius: 10px;
-    min-width: 80px;
-    text-align: center;
-}
-
-.brand-category {
-    background: rgba(52, 152, 219, 0.1);
-    color: var(--secondary-color);
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-.brand-card-body {
-    padding: 25px;
-    flex: 1;
-}
-
-.brand-card-title {
-    font-size: 1.4rem;
-    color: var(--dark-color);
-    margin-bottom: 10px;
+.logo {
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-.brand-card-description {
-    color: var(--gray-color);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
+.logo span { font-weight: 400; color: var(--purple-light); }
 
-.brand-stats {
+.nav-links {
     display: flex;
-    gap: 20px;
-    margin-top: 20px;
+    list-style: none;
+    gap: 30px;
+    margin-left: 150px;
 }
 
-.stat {
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.badge {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- Hero Section --- */
+.hero-split {
+    display: flex;
+    min-height: 50vh;
+    align-items: center;
+    padding: 20px 8% 60px 8%; /* Cambia 60px arriba por 20px */
+    /* padding: [arriba] [derecha] [abajo] [izquierda] */
+}
+
+.hero-text { flex: 1; }
+
+.hero-text h1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.hero-text h1 span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+}
+
+.hero-description {
+    color: var(--text-gray);
+    margin-top: 20px;
+    max-width: 500px;
+    font-size: 1.1rem;
+}
+
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-bg {
+    width: 300px;
+    height: 300px;
+    background: var(--purple-light);
+    filter: blur(80px);
+    opacity: 0.4;
+    border-radius: 50%;
+}
+
+/* --- Creative Grid --- */
+.brands-showcase {
+    padding: 40px 8%;
+}
+
+.creative-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 280px;
+    gap: 20px;
+}
+
+.brand-item {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-.stat i {
-    color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-}
-
-.stat-value {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--dark-color);
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: var(--gray-color);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.brand-card-footer {
-    padding: 20px 25px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    background: white;
-}
-
-.brand-link {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-    font-size: 1rem;
-}
-
-.brand-link:hover {
-    color: var(--secondary-color);
-    gap: 12px;
-}
-
-.brand-link i {
-    font-size: 0.9rem;
-    transition: transform 0.3s ease;
-}
-
-.brand-link:hover i {
-    transform: translateX(5px);
-}
-
-/* Comparador de Marcas */
-.brand-comparison {
-    padding: 80px 0;
-    background: var(--bg-light);
-}
-
-.comparison-table-container {
-    overflow-x: auto;
-    margin-top: 40px;
+    justify-content: flex-end;
+    transition: var(--transition);
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    background: white;
 }
 
-.comparison-table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 800px;
+.brand-item.wide {
+    grid-column: span 2;
+    grid-row: span 2;
+    background: #fff;
+    color: #0f002b;
 }
 
-.comparison-table th {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 20px;
-    text-align: left;
-    font-weight: 600;
-    font-size: 1.1rem;
+.brand-item.wide .tag { color: var(--purple-light); }
+
+.brand-item:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.08);
 }
 
-.comparison-table th:first-child {
-    border-radius: 15px 0 0 0;
+.tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--accent);
 }
 
-.comparison-table th:last-child {
-    border-radius: 0 15px 0 0;
+.brand-item h2, .brand-item h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
-.comparison-table td {
-    padding: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    color: var(--dark-color);
-}
-
-.comparison-table tr:last-child td {
-    border-bottom: none;
-}
-
-.comparison-table tr:hover {
-    background: rgba(41, 128, 185, 0.02);
-}
-
-.rating-bar {
-    width: 100px;
-    height: 8px;
-    background: #e1e5e9;
-    border-radius: 4px;
-    overflow: hidden;
-    display: inline-block;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-
-.rating-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-    border-radius: 4px;
-}
-
-/* CTA Section */
-.brands-cta {
-    padding: 100px 0;
-    background: linear-gradient(135deg, rgba(41, 128, 185, 0.9), rgba(39, 174, 96, 0.9)), 
-                url('../Imagenes/cta-bg.jpg') center/cover no-repeat;
-    color: white;
-    text-align: center;
-}
-
-.cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.cta-title {
-    font-size: 2.8rem;
-    font-weight: 800;
+.brand-item p {
+    font-size: 0.9rem;
+    opacity: 0.8;
     margin-bottom: 20px;
-    line-height: 1.2;
 }
 
-.cta-description {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    opacity: 0.95;
-    line-height: 1.6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
+/* --- Links y Botones --- */
+.brand-link, .btn-minimal {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    position: relative;
 }
 
-.cta-buttons {
+.brand-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition);
+}
+
+.brand-item:hover .brand-link::after { width: 100%; }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+    .creative-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero-text h1 { font-size: 3.5rem; }
+}
+
+@media (max-width: 600px) {
+    .creative-grid { grid-template-columns: 1fr; }
+    .brand-item.wide { grid-column: span 1; }
+    .hero-split { flex-direction: column; text-align: center; }
+}
+
+/* --- DESIGN MASTER: ULTRA-PROFESSIONAL ABSTRACT --- */
+.hero-visual {
+    flex: 1;
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    perspective: 2000px;
+    position: relative;
 }
 
-.cta-buttons .btn {
-    padding: 18px 35px;
-    font-size: 1.1rem;
-    font-weight: 600;
+.abstract-container {
+    position: relative;
+    width: 450px;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Orbes de luz de fondo */
+.glow-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 1;
+    animation: orbFloat 8s infinite alternate ease-in-out;
+}
+
+.orb-1 {
+    width: 300px;
+    height: 300px;
+    background: rgba(138, 43, 226, 0.3);
+    top: -10%;
+    left: -10%;
+}
+
+.orb-2 {
+    width: 250px;
+    height: 250px;
+    background: rgba(0, 242, 255, 0.2);
+    bottom: -5%;
+    right: -5%;
+    animation-delay: -4s;
+}
+
+/* Escultura de Cristal (Glassmorphism) */
+.glass-sculpture {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    z-index: 5;
+    transform-style: preserve-3d;
+    transform: rotateX(20deg) rotateY(-20deg);
+}
+
+.glass-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+}
+
+.layer-1 { transform: translateZ(0px); opacity: 0.8; }
+.layer-2 { transform: translateZ(40px) scale(0.9); background: rgba(138, 43, 226, 0.05); }
+.layer-3 { transform: translateZ(80px) scale(0.8); border: 1px solid rgba(0, 242, 255, 0.3); }
+
+/* Núcleo Central */
+.core-innovation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(100px);
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 30px #8a2be2, 0 0 60px rgba(138, 43, 226, 0.5);
+    z-index: 10;
+}
+
+.core-innovation i {
+    color: #0f002b;
+    font-size: 1.8rem;
+}
+
+.core-ring {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    border: 2px dashed rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+}
+
+/* Etiquetas de Datos */
+.data-tag {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 15;
+    animation: tagFloat 4s infinite ease-in-out;
+}
+
+.data-tag p {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.data-tag .dot {
+    width: 6px;
+    height: 6px;
+    background: #00f2ff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00f2ff;
+}
+
+.tag-top { top: 10%; right: -5%; }
+.tag-bottom { bottom: 15%; left: -5%; animation-delay: -2s; }
+
+/* Animaciones */
+@keyframes orbFloat {
+    from { transform: translateY(0) scale(1); }
+    to { transform: translateY(-30px) scale(1.1); }
+}
+
+@keyframes tagFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Efecto Hover */
+.hero-visual:hover .glass-sculpture {
+    transform: rotateX(10deg) rotateY(10deg) scale(1.05);
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Estilo para logo en imagen */
+.logo-img {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    height: 40px; /* Altura fija para el logo */
+}
+
+.logo-img img {
+    height: 100%; /* La imagen ocupa toda la altura del contenedor */
+    width: auto; /* Mantiene la proporción */
+    max-width: 180px; /* Ancho máximo */
+    object-fit: contain; /* Mantiene la proporción de la imagen */
+    transition: opacity 0.3s ease;
+}
+
+/* Efecto hover para el logo */
+.logo-img:hover img {
+    opacity: 0.8;
+}
+
+/* Si quieres que el logo sea responsive */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 35px; /* Más pequeño en móvil */
+    }
+    
+    .logo-img img {
+        max-width: 150px;
+    }
+}
+
+/* Estilo del nuevo botón basado en la imagen */
+.cta-nav-browse {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #00d2ff, #1e40af); /* Degradado cian a azul profesional */
+    padding: 5px 25px 5px 5px; /* Padding reducido a la izquierda para el círculo */
     border-radius: 50px;
-    min-width: 220px;
-    display: inline-flex;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-nav-browse:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+}
+
+/* El círculo del icono (parte izquierda del botón) */
+.icon-circle {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2); /* Efecto de brillo sutil circular */
+    border-radius: 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    margin-right: 15px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-.cta-buttons .btn-primary {
-    background: white;
-    color: var(--primary-color);
+.icon-circle i {
+    font-size: 0.9rem;
+    color: #ffffff;
+    /* Un ligero resplandor para imitar la imagen borrosa */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
 }
 
-.cta-buttons .btn-primary:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-5px);
+.btn-text {
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
-.cta-buttons .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-.cta-buttons .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
-    transform: translateY(-5px);
-}
-
-/* ===== MODO OSCURO ===== */
-.dark-mode .brands-hero {
-    background: linear-gradient(135deg, rgba(31, 58, 84, 0.9), rgba(26, 42, 58, 0.9)), 
-                url('../Imagenes/brands-hero.jpg') center/cover no-repeat;
-}
-
-.dark-mode .featured-brands {
-    background: var(--bg-dark-secondary);
-}
-
-.dark-mode .featured-brand-card {
-    background: var(--bg-dark);
-    border-color: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode .featured-brand-card:hover {
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .brand-name {
-    color: var(--text-light);
-}
-
-.dark-mode .brand-description {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .rating-text {
-    color: var(--text-light);
-}
-
-.dark-mode .feature-tag {
-    background: rgba(52, 152, 219, 0.15);
-    color: var(--secondary-color);
-}
-
-.dark-mode .feature-tag:hover {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.dark-mode .all-brands-section {
-    background: var(--bg-dark);
-}
-
-.dark-mode .brand-card {
-    background: var(--bg-dark-secondary);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .brand-card-header {
-    background: var(--bg-dark);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .brand-card-title {
-    color: var(--text-light);
-}
-
-.dark-mode .brand-card-description {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .brand-card-footer {
-    background: var(--bg-dark);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .stat-value {
-    color: var(--text-light);
-}
-
-.dark-mode .brand-comparison {
-    background: var(--bg-dark-secondary);
-}
-
-.dark-mode .comparison-table-container {
-    background: var(--bg-dark);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode .comparison-table td {
-    color: var(--text-light);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .comparison-table tr:hover {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.dark-mode .rating-bar {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .brands-cta {
-    background: linear-gradient(135deg, rgba(31, 98, 145, 0.9), rgba(29, 154, 76, 0.9)), 
-                url('../Imagenes/cta-bg.jpg') center/cover no-repeat;
-}
-
-/* Responsive */
-@media (max-width: 1200px) {
-    .featured-brands-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 992px) {
-    .brands-hero-title {
-        font-size: 2.8rem;
-    }
-    
-    .cta-title {
-        font-size: 2.4rem;
-    }
-    
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cta-buttons .btn {
-        width: 100%;
-        max-width: 300px;
-    }
-}
-
+/* Ajuste responsivo para el nuevo botón */
 @media (max-width: 768px) {
-    .brands-hero {
-        padding: 120px 0 60px;
-        margin-top: 70px;
+    .cta-nav-browse {
+        padding: 4px 15px 4px 4px;
+        font-size: 0.8rem;
     }
-    
-    .brands-hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .brands-hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 20px;
-    }
-    
-    .featured-brands,
-    .all-brands-section,
-    .brand-comparison,
-    .brands-cta {
-        padding: 60px 0;
-    }
-    
-    .featured-brands-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .all-brands-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-    
-    .brand-card {
-        padding: 20px;
-    }
-    
-    .cta-title {
-        font-size: 2rem;
-    }
-    
-    .cta-description {
-        font-size: 1.1rem;
-        padding: 0 20px;
+    .icon-circle {
+        width: 30px;
+        height: 30px;
     }
 }
 
-@media (max-width: 576px) {
-    .all-brands-grid {
-        grid-template-columns: 1fr;
+.btn-phone-minimal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(30, 64, 175, 0.4);
+    padding: 8px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-phone-minimal:hover {
+    background: rgba(30, 64, 175, 0.1);
+    border-color: #1e40af;
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.2);
+}
+
+.dot-live {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e; /* Verde de "En línea" */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse-green 2s infinite;
+}
+
+.phone-label { color: var(--text-dim); font-weight: 400; }
+.phone-number { font-weight: 700; color: white; }
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+/* =========================================== */
+/* MEDIA QUERIES - RESPONSIVE PARA TODOS DISPOSITIVOS */
+/* =========================================== */
+
+/* Tablets grandes y laptops pequeñas (1024px) */
+@media (max-width: 1024px) {
+    .nav-links {
+        gap: 25px;
+        margin-left: 100px;
     }
     
-    .featured-brand-card {
-        padding: 30px 20px;
+    .creative-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
-    .brand-logo-circle {
-        width: 100px;
-        height: 100px;
+    .hero-text h1 {
+        font-size: 4rem;
     }
     
-    .brand-logo-text {
-        font-size: 1.5rem;
+    .abstract-container {
+        width: 400px;
+        height: 400px;
     }
     
-    .brand-name {
-        font-size: 1.5rem;
+    .glass-sculpture {
+        width: 280px;
+        height: 280px;
     }
     
-    .brand-features {
-        flex-direction: column;
-        align-items: center;
+    .orb-1 {
+        width: 250px;
+        height: 250px;
     }
     
-    .brand-stats {
-        flex-direction: column;
+    .orb-2 {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Tablets (768px) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 20px 5%;
         gap: 15px;
     }
     
-    .stat {
-        flex-direction: row;
+    .nav-links {
+        order: 3;
+        width: 100%;
         justify-content: center;
-        gap: 10px;
+        margin: 15px 0 0 0;
+        gap: 20px;
+        flex-wrap: wrap;
     }
     
-    .comparison-table th,
-    .comparison-table td {
-        padding: 15px 10px;
-        font-size: 0.9rem;
+    .badge {
+        order: 2;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .logo-img img {
+        max-width: 150px;
+    }
+    
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+        padding: 30px 5%;
+    }
+    
+    .hero-text, .hero-visual {
+        width: 100%;
+    }
+    
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .abstract-container {
+        width: 350px;
+        height: 350px;
+    }
+    
+    .glass-sculpture {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .core-innovation {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .core-innovation i {
+        font-size: 1.5rem;
+    }
+    
+    .orb-1 {
+        width: 220px;
+        height: 220px;
+    }
+    
+    .orb-2 {
+        width: 190px;
+        height: 190px;
+    }
+    
+    .glow-orb {
+        filter: blur(60px);
+    }
+    
+    .data-tag {
+        padding: 8px 15px;
+    }
+    
+    .data-tag p {
+        font-size: 0.65rem;
+    }
+    
+    .tag-top {
+        right: 0;
+        top: 5%;
+    }
+    
+    .tag-bottom {
+        left: 0;
+        bottom: 10%;
+    }
+    
+    .creative-grid {
+        gap: 15px;
+    }
+    
+    .brand-item {
+        padding: 25px;
+    }
+    
+    .brand-item h2, .brand-item h3 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-nav-browse {
+        padding: 4px 20px 4px 4px;
+        font-size: 0.85rem;
+    }
+    
+    .icon-circle {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .btn-phone-minimal {
+        padding: 7px 18px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Móviles grandes (576px) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 15px 4%;
+    }
+    
+    .nav-links {
+        gap: 15px;
+        font-size: 0.85rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
+    
+    .badge {
+        font-size: 0.65rem;
+        padding: 6px 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .abstract-container {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .glass-sculpture {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .core-innovation {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .core-innovation i {
+        font-size: 1.3rem;
+    }
+    
+    .orb-1 {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .orb-2 {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .creative-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        grid-auto-rows: 250px;
+    }
+    
+    .brand-item.wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .brand-item h2, .brand-item h3 {
+        font-size: 1.6rem;
+    }
+    
+    .brand-item p {
+        font-size: 0.85rem;
+    }
+    
+    .brands-showcase {
+        padding: 30px 4%;
+    }
+    
+    .cta-nav-browse {
+        font-size: 0.8rem;
+    }
+}
+
+/* Móviles pequeños (360px) */
+@media (max-width: 360px) {
+    .navbar {
+        padding: 12px 3%;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    .logo-img img {
+        max-width: 130px;
+    }
+    
+    .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    
+    .badge {
+        font-size: 0.6rem;
+        padding: 5px 12px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .abstract-container {
+        width: 280px;
+        height: 280px;
+    }
+    
+    .glass-sculpture {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .creative-grid {
+        grid-auto-rows: 220px;
+    }
+    
+    .brand-item {
+        padding: 20px;
+    }
+    
+    .brand-item h2, .brand-item h3 {
+        font-size: 1.4rem;
+    }
+    
+    .data-tag p {
+        font-size: 0.6rem;
+    }
+    
+    .cta-nav-browse {
+        font-size: 0.75rem;
+        padding: 3px 15px 3px 3px;
+    }
+    
+    .icon-circle {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .btn-phone-minimal {
+        padding: 6px 15px;
+        font-size: 0.75rem;
+    }
+}
+
+/* Ajustes para orientación horizontal en móviles */
+@media (max-height: 500px) and (orientation: landscape) {
+    .navbar {
+        padding: 10px 4%;
+    }
+    
+    .hero-split {
+        min-height: 70vh;
+        padding: 10px 4% 30px 4%;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
 }
