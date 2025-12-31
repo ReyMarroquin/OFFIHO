@@ -1,960 +1,322 @@
-/* ===== ESTILOS ESPECÍFICOS PARA LEY-SILLA.HTML ===== */
+:root {
+    --primary-color: #CDA274; /* El tono dorado del texto */
+    --dark-color: #292F36;
+    --text-color: #4D5053;
+    --bg-white: #ffffff;
+}
 
-/* Hero Section de Ley Silla */
-.law-hero {
-    background: linear-gradient(135deg, rgba(41, 128, 185, 0.9), rgba(39, 174, 96, 0.9)), 
-                url('../Imagenes/law-hero.jpg') center/cover no-repeat;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Navigation --- */
+header {
+    padding: 30px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'DM+Serif+Display', serif;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    margin: 0 15px;
+    font-weight: 400;
+}
+
+.btn-quote {
+    background: var(--dark-color);
     color: white;
-    padding: 140px 0 80px;
-    margin-top: 80px;
-    text-align: center;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* --- Hero Section --- */
+.hero {
     position: relative;
-    overflow: hidden;
+    padding: 100px 0;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
 }
 
-.container{
-    max-width: 85%;
-}
-
-.law-hero::before {
-    content: '';
+/* El fondo de planos con transparencia */
+.blueprint-bg {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 60%;
     height: 100%;
-    background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-    pointer-events: none;
+    background-image: url('blueprint-pattern.png'); /* Debes tener esta imagen */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    z-index: -1;
 }
 
-.law-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.law-hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.law-hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-    opacity: 0.95;
-    line-height: 1.6;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.law-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
-
-.law-hero-badge i {
-    font-size: 1.3rem;
-}
-
-/* Introducción */
-.law-introduction {
-    padding: 80px 0;
-    background: white;
-}
-
-.introduction-content {
+.hero-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
     align-items: center;
-    margin-top: 40px;
+    gap: 50px;
 }
 
-.introduction-text .lead {
-    font-size: 1.2rem;
-    line-height: 1.7;
+.hero-text h1 {
+    font-family: 'DM+Serif+Display', serif;
+    font-size: 65px;
     color: var(--dark-color);
-    margin-bottom: 40px;
-    padding: 20px;
-    background: var(--bg-light);
-    border-radius: 15px;
-    border-left: 4px solid var(--primary-color);
+    line-height: 1.2;
+    margin-bottom: 20px;
 }
 
-.introduction-text .lead strong {
+.highlight {
     color: var(--primary-color);
-    font-weight: 700;
 }
 
-.law-highlights {
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 450px;
+}
+
+.btn-dark {
+    background: var(--dark-color);
+    color: white;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* La forma orgánica (blob) de la imagen */
+.blob-mask {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 150px 150px 0px 150px; /* Ajuste para simular la forma de la imagen */
+}
+
+.blob-mask img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Statistics Section --- */
+.stats {
+    padding: 80px 0;
+}
+
+.stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-family: 'DM+Serif+Display', serif;
+    font-size: 50px;
+    color: var(--dark-color);
+}
+
+.stat-item p {
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* --- Sección de Productos --- */
+.products-gallery {
+    padding: 60px 0;
+    background-color: #ffffff; /* Fondo crema suave similar a la imagen */
+}
+
+.products-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinea las sillas por la base */
     gap: 20px;
 }
 
-.highlight-card {
-    background: var(--bg-light);
-    padding: 25px 20px;
-    border-radius: 12px;
+.product-item {
     text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    flex: 1;
 }
 
-.highlight-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
-}
-
-.highlight-card i {
-    font-size: 2.2rem;
-    color: var(--primary-color);
+.product-item img {
+    max-width: 100%;
+    height: auto;
     margin-bottom: 15px;
+    /* Efecto opcional para que las imágenes resalten */
+    transition: transform 0.3s ease;
 }
 
-.highlight-card h4 {
-    font-size: 1.1rem;
-    color: var(--dark-color);
-    margin-bottom: 10px;
-    font-weight: 700;
+.product-item img:hover {
+    transform: translateY(-10px);
 }
 
-.highlight-card p {
-    color: var(--gray-color);
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-.introduction-image {
-    position: relative;
-    height: 100%;
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.law-compliance-badge {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(41, 128, 185, 0.2);
-    max-width: 300px;
-    width: 100%;
-}
-
-.law-compliance-badge i {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.law-compliance-badge h3 {
-    font-size: 1.8rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin: 0;
-}
-
-/* Requisitos */
-.law-requirements {
-    padding: 80px 0;
-    background: var(--bg-light);
-}
-
-.requirements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.requirement-card {
-    background: white;
-    border-radius: 15px;
-    padding: 30px;
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.requirement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-    border-color: var(--primary-color);
-}
-
-.requirement-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: white;
-    font-size: 1.5rem;
-}
-
-.requirement-content h3 {
-    font-size: 1.3rem;
-    color: var(--dark-color);
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.requirement-content p {
-    color: var(--gray-color);
-    line-height: 1.6;
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-/* Beneficios */
-.law-benefits {
-    padding: 80px 0;
-    background: white;
-}
-
-.benefits-comparison {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 40px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.comparison-column {
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.comparison-column.positive {
-    border-color: var(--secondary-color);
-    position: relative;
-    overflow: hidden;
-}
-
-.comparison-column.positive::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
-}
-
-.comparison-header {
-    background: var(--bg-light);
-    padding: 30px;
-    text-align: center;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.comparison-column.positive .comparison-header {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(41, 128, 185, 0.1));
-}
-
-.comparison-header h3 {
-    font-size: 1.5rem;
-    color: var(--dark-color);
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.comparison-icon {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    color: white;
-    font-size: 2rem;
-}
-
-.comparison-icon.negative {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-}
-
-.comparison-list {
-    padding: 30px;
-    margin: 0;
-    list-style: none;
-}
-
-.comparison-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.comparison-list li:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-}
-
-.comparison-list li i {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-.comparison-list.negative li i {
-    color: #e74c3c;
-}
-
-.comparison-list li span {
-    color: var(--dark-color);
-    line-height: 1.5;
-    font-weight: 500;
-}
-
-/* Certificación */
-.law-certification {
-    padding: 80px 0;
-    background: linear-gradient(135deg, rgba(41, 128, 185, 0.1), rgba(39, 174, 96, 0.1));
-}
-
-.certification-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.certification-badge {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 50px 40px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 20px 40px rgba(41, 128, 185, 0.2);
-    min-width: 250px;
-}
-
-.certification-badge i {
-    font-size: 4.5rem;
-    margin-bottom: 25px;
-    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.certification-badge h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    line-height: 1.3;
-    margin: 0;
-}
-
-.certification-text h2 {
-    font-size: 2.2rem;
-    color: var(--dark-color);
-    margin-bottom: 20px;
-    font-weight: 800;
-    line-height: 1.3;
-}
-
-.certification-text p {
-    color: var(--gray-color);
-    line-height: 1.7;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.certification-features {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.cert-feature {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: white;
-    padding: 12px 20px;
-    border-radius: 50px;
+.product-item h3 {
+    font-family: 'Jost', sans-serif;
+    font-size: 22px;
     font-weight: 600;
-    color: var(--primary-color);
-    border: 2px solid rgba(41, 128, 185, 0.2);
-    transition: all 0.3s ease;
-}
-
-.cert-feature:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-3px);
-    border-color: var(--primary-color);
-}
-
-.cert-feature i {
-    font-size: 1.1rem;
-}
-
-/* Información Legal Oficial */
-.legal-official {
-    padding: 80px 0;
-    background: white;
-}
-
-.legal-official-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 50px;
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: var(--bg-light);
-    border-radius: 20px;
-    padding: 50px;
-    border: 2px solid rgba(41, 128, 185, 0.1);
-}
-
-.legal-icon {
-    width: 120px;
-    height: 120px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3.5rem;
-    flex-shrink: 0;
-    box-shadow: 0 15px 30px rgba(41, 128, 185, 0.2);
-}
-
-.legal-text h2 {
-    font-size: 2rem;
-    color: var(--dark-color);
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.legal-text p {
-    color: var(--gray-color);
-    line-height: 1.7;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-}
-
-.legal-buttons {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-}
-
-.legal-buttons .btn-lg {
-    padding: 18px 35px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    min-width: 220px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.legal-disclaimer {
-    background: rgba(41, 128, 185, 0.05);
-    padding: 20px;
-    border-radius: 12px;
-    border-left: 4px solid var(--secondary-color);
-}
-
-.legal-disclaimer p {
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 0;
-    font-size: 0.95rem;
-    color: var(--gray-color);
-}
-
-.legal-disclaimer i {
-    color: var(--secondary-color);
-    font-size: 1.2rem;
-    margin-top: 3px;
-    flex-shrink: 0;
-}
-
-/* Checklist de Cumplimiento */
-.compliance-checklist {
-    padding: 80px 0;
-    background: var(--bg-light);
-}
-
-.checklist-container {
-    max-width: 800px;
-    margin: 40px auto 0;
-    background: white;
-    border-radius: 20px;
-    padding: 40px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-}
-
-.checklist-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 25px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-}
-
-.checklist-item:last-child {
-    border-bottom: none;
-}
-
-.checklist-item:hover {
-    background: rgba(41, 128, 185, 0.02);
-    border-radius: 12px;
-    transform: translateX(5px);
-}
-
-.checklist-checkbox {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.2rem;
-    flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(41, 128, 185, 0.2);
-}
-
-.checklist-content h4 {
-    font-size: 1.2rem;
-    color: var(--dark-color);
-    margin-bottom: 8px;
-    font-weight: 700;
-}
-
-.checklist-content p {
-    color: var(--gray-color);
-    line-height: 1.6;
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-.checklist-result {
-    max-width: 800px;
-    margin: 40px auto 0;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 20px;
-    padding: 50px;
-    text-align: center;
-    color: white;
-    box-shadow: 0 20px 40px rgba(41, 128, 185, 0.3);
-}
-
-.checklist-result h3 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.3;
-}
-
-.checklist-result p {
-    font-size: 1.2rem;
-    opacity: 0.95;
-    margin-bottom: 30px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-.checklist-result .btn {
-    background: white;
-    color: var(--primary-color);
-    padding: 16px 35px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    min-width: 200px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-}
-
-.checklist-result .btn:hover {
-    background: rgba(255, 255, 255, 0.9);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
-}
-
-/* ===== MODO OSCURO ===== */
-.dark-mode .law-hero {
-    background: linear-gradient(135deg, rgba(31, 58, 84, 0.9), rgba(26, 42, 58, 0.9)), 
-                url('../Imagenes/law-hero.jpg') center/cover no-repeat;
-}
-
-.dark-mode .law-hero-badge {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-.dark-mode .law-introduction {
-    background: var(--bg-dark);
-}
-
-.dark-mode .introduction-text .lead {
-    background: var(--bg-dark-secondary);
-    color: var(--text-light);
-    border-left-color: var(--secondary-color);
-}
-
-.dark-mode .introduction-text .lead strong {
-    color: var(--secondary-color);
-}
-
-.dark-mode .highlight-card {
-    background: var(--bg-dark-secondary);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .highlight-card:hover {
-    border-color: var(--secondary-color);
-}
-
-.dark-mode .highlight-card h4 {
-    color: var(--text-light);
-}
-
-.dark-mode .highlight-card p {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .law-requirements {
-    background: var(--bg-dark-secondary);
-}
-
-.dark-mode .requirement-card {
-    background: var(--bg-dark);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .requirement-card:hover {
-    border-color: var(--secondary-color);
-}
-
-.dark-mode .requirement-content h3 {
-    color: var(--text-light);
-}
-
-.dark-mode .requirement-content p {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .law-benefits {
-    background: var(--bg-dark);
-}
-
-.dark-mode .comparison-column {
-    background: var(--bg-dark);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .comparison-header {
-    background: var(--bg-dark-secondary);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .comparison-column.positive .comparison-header {
-    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15), rgba(41, 128, 185, 0.15));
-}
-
-.dark-mode .comparison-header h3 {
-    color: var(--text-light);
-}
-
-.dark-mode .comparison-list li span {
-    color: var(--text-light);
-}
-
-.dark-mode .comparison-list li {
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .law-certification {
-    background: linear-gradient(135deg, rgba(41, 128, 185, 0.15), rgba(39, 174, 96, 0.15));
-}
-
-.dark-mode .certification-text h2 {
-    color: var(--text-light);
-}
-
-.dark-mode .certification-text p {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .cert-feature {
-    background: var(--bg-dark);
-    color: var(--secondary-color);
-    border-color: rgba(52, 152, 219, 0.3);
-}
-
-.dark-mode .cert-feature:hover {
-    background: var(--secondary-color);
-    color: white;
-}
-
-.dark-mode .legal-official {
-    background: var(--bg-dark);
-}
-
-.dark-mode .legal-official-content {
-    background: var(--bg-dark-secondary);
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .legal-text h2 {
-    color: var(--text-light);
-}
-
-.dark-mode .legal-text p {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .legal-disclaimer {
-    background: rgba(52, 152, 219, 0.1);
-}
-
-.dark-mode .legal-disclaimer p {
-    color: var(--text-light-secondary);
-}
-
-.dark-mode .compliance-checklist {
-    background: var(--bg-dark-secondary);
-}
-
-.dark-mode .checklist-container {
-    background: var(--bg-dark);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.dark-mode .checklist-item {
-    border-color: rgba(255, 255, 255, 0.05);
-}
-
-.dark-mode .checklist-item:hover {
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.dark-mode .checklist-content h4 {
-    color: var(--text-light);
-}
-
-.dark-mode .checklist-content p {
-    color: var(--text-light-secondary);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-    .introduction-content,
-    .certification-content,
-    .legal-official-content {
+    color: #292F36;
+    margin-top: 10px;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .hero-text p {
+        margin: 0 auto 30px;
+    }
+    .stats-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    
-    .introduction-image {
-        min-height: 300px;
-        order: -1;
-    }
-    
-    .law-highlights {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .benefits-comparison {
-        grid-template-columns: 1fr;
-        max-width: 600px;
-    }
-    
-    .legal-icon {
-        margin: 0 auto;
-    }
 }
 
+/* Estilo del nuevo botón basado en la imagen */
+.cta-nav-browse {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to right, #00d2ff, #1e40af); /* Degradado cian a azul profesional */
+    padding: 5px 25px 5px 5px; /* Padding reducido a la izquierda para el círculo */
+    border-radius: 50px;
+    text-decoration: none;
+    color: black; /* Cambiado a negro */
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-nav-browse:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
+    color: black; /* Mantener negro al hacer hover */
+}
+
+/* El círculo del icono (parte izquierda del botón) */
+.icon-circle {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.2); /* Efecto de brillo sutil circular */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.icon-circle i {
+    font-size: 0.9rem;
+    color: black; /* Cambiado a negro */
+    /* Un ligero resplandor para imitar la imagen borrosa */
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Cambiado a sombra negra */
+}
+
+.btn-text {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: black; /* Asegurar que el texto sea negro */
+}
+
+.btn-phone-minimal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(30, 64, 175, 0.4);
+    padding: 8px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: black; /* Cambiado a negro */
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn-phone-minimal:hover {
+    background: rgba(30, 64, 175, 0.1);
+    border-color: #1e40af;
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.2);
+    color: black; /* Mantener negro al hacer hover */
+}
+
+.phone-label { 
+    color: #333333; /* Gris oscuro en lugar de var(--text-dim) */
+    font-weight: 400; 
+}
+
+.phone-number { 
+    font-weight: 700; 
+    color: black; /* Cambiado a negro */
+}
+
+/* Ajuste responsivo para el nuevo botón */
 @media (max-width: 768px) {
-    .law-hero {
-        padding: 120px 0 60px;
-        margin-top: 70px;
+    .cta-nav-browse {
+        padding: 4px 15px 4px 4px;
+        font-size: 0.8rem;
     }
-    
-    .law-hero-title {
-        font-size: 2.2rem;
-    }
-    
-    .law-hero-subtitle {
-        font-size: 1.1rem;
-        padding: 0 20px;
-    }
-    
-    .law-hero-badge {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-    
-    .law-introduction,
-    .law-requirements,
-    .law-benefits,
-    .law-certification,
-    .legal-official,
-    .compliance-checklist {
-        padding: 60px 0;
-    }
-    
-    .requirements-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .law-highlights {
-        grid-template-columns: 1fr;
-    }
-    
-    .certification-badge {
-        padding: 40px 30px;
-        min-width: auto;
-    }
-    
-    .certification-badge i {
-        font-size: 3.5rem;
-    }
-    
-    .certification-badge h3 {
-        font-size: 1.8rem;
-    }
-    
-    .certification-text h2 {
-        font-size: 1.8rem;
-    }
-    
-    .legal-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .legal-buttons .btn-lg {
-        width: 100%;
-        min-width: auto;
-    }
-    
-    .checklist-container {
-        padding: 30px 20px;
-    }
-    
-    .checklist-result {
-        padding: 40px 20px;
-    }
-    
-    .checklist-result h3 {
-        font-size: 1.8rem;
-    }
-    
-    .checklist-result p {
-        font-size: 1.1rem;
+    .icon-circle {
+        width: 30px;
+        height: 30px;
     }
 }
 
-@media (max-width: 480px) {
-    .law-hero-title {
-        font-size: 1.8rem;
-    }
-    
-    .law-hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .introduction-text .lead {
-        padding: 15px;
-        font-size: 1rem;
-    }
-    
-    .requirement-card {
-        flex-direction: column;
-        text-align: center;
-        padding: 25px 20px;
-    }
-    
-    .requirement-icon {
-        margin: 0 auto;
-    }
-    
-    .certification-badge {
-        padding: 30px 20px;
-    }
-    
-    .certification-badge i {
-        font-size: 3rem;
-    }
-    
-    .certification-badge h3 {
-        font-size: 1.5rem;
-    }
-    
-    .certification-features {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cert-feature {
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .legal-official-content {
-        padding: 30px 20px;
-    }
-    
-    .legal-icon {
-        width: 80px;
-        height: 80px;
-        font-size: 2.5rem;
-    }
+.dot-live {
+    width: 8px;
+    height: 8px;
+    background-color: #22c55e; /* Verde de "En línea" */
+    border-radius: 50%;
+    box-shadow: 0 0 8px #22c55e;
+    animation: pulse-green 2s infinite;
 }
+
+@keyframes pulse-green {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+

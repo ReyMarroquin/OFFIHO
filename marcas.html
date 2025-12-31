@@ -3,146 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OFFIHO - Brand Experience</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Ergonomía y Confort | Marcas</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/marcas.css">
-    <link rel="stylesheet" href="css/sidebar.css">
+
+    <link rel="stylesheet" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="marcas">
 
-    <!-- Botón para abrir el menú (solo visible en móvil/tablet) -->
-    <div class="menu-toggle" id="menuToggle">
-        <div class="hamburger">
-            <span class="line line-1"></span>
-            <span class="line line-2"></span>
-            <span class="line line-3"></span>
+    <!-- NAVBAR IDÉNTICO AL DE INDEX.HTML -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="Imagenes/Logo.png" alt="Ergonomía y Confort - Logo" class="logo-img">
+            </a>
         </div>
-        <span class="menu-label">Menú</span>
-    </div>
-
-    <!-- Overlay para cerrar el menú -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Menú desplegable sidebar -->
-    <nav class="sidebar-nav" id="sidebarNav">
-        <div class="sidebar-header">
-            <div class="logo-container">
-                <img src="Imagenes/Logo.png" alt="OFFIHO BRANDS Logo" class="sidebar-logo">
-                <div class="logo-text">
-                    <h3>OFFIHO</h3>
-                    <p>Brand Experience</p>
-                </div>
-            </div>
-            <button class="close-sidebar" id="closeSidebar">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <div class="sidebar-menu">
-            <a href="index.html" class="menu-item">
-                <div class="menu-icon">
-                    <i class="fas fa-home"></i>
-                </div>
-                <div class="menu-text">
-                    <h4>Inicio</h4>
-                    <p>Página principal</p>
-                </div>
-                <div class="menu-indicator">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-            <a href="marcas.html" class="menu-item active">
-                <div class="menu-icon">
-                    <i class="fas fa-tags"></i>
-                </div>
-                <div class="menu-text">
-                    <h4>Marcas</h4>
-                    <p>Nuestras colecciones</p>
-                </div>
-                <div class="menu-indicator">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-            <a href="ley-silla.html" class="menu-item">
-                <div class="menu-icon">
-                    <i class="fas fa-gavel"></i>
-                </div>
-                <div class="menu-text">
-                    <h4>Ley Silla</h4>
-                    <p>Normativa y cumplimiento</p>
-                </div>
-                <div class="menu-indicator">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-            <a href="catalogo.html" class="menu-item">
-                <div class="menu-icon">
-                    <i class="fas fa-book-open"></i>
-                </div>
-                <div class="menu-text">
-                    <h4>Catálogo</h4>
-                    <p>Explora nuestros productos</p>
-                </div>
-                <div class="menu-indicator">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-            <a href="contactanos.html" class="menu-item">
-                <div class="menu-icon">
-                    <i class="fas fa-envelope"></i>
-                </div>
-                <div class="menu-text">
-                    <h4>Contáctanos</h4>
-                    <p>Hablemos de tu proyecto</p>
-                </div>
-                <div class="menu-indicator">
-                    <i class="fas fa-chevron-right"></i>
-                </div>
-            </a>
-            
-            <!-- Sección especial de contacto -->
-            <div class="menu-divider"></div>
-            
-            <div class="contact-section">
-                <div class="contact-icon">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <div class="contact-info">
-                    <h4>Atención al cliente</h4>
-                    <p class="contact-phone">
-                        <i class="fas fa-phone"></i> 656-687-78-54
-                    </p>
-                    <p class="contact-hours">
-                        <i class="fas fa-clock"></i> Lun-Vie 9:00 - 18:00
-                    </p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="sidebar-footer">
-            <div class="brand-tagline">
-                <p>Curaduría de diseño ergonómico para espacios de alto rendimiento</p>
-            </div>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-pinterest"></i></a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- ========== NAVBAR ORIGINAL (visible en escritorio) ========== -->
-    <header class="navbar">
-        <a href="index.html" class="logo-img">
-            <img src="Imagenes/Logo.png" alt="OFFIHO BRANDS Logo">
-        </a>
-        
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="marcas.html" class="active">Marcas</a></li>
@@ -155,8 +32,9 @@
             <span class="phone-label">Atención:</span>
             <span class="phone-number">656-687-78-54</span>
         </a>
-    </header>
+    </nav>
 
+    <!-- CONTENIDO ESPECÍFICO DE LA PÁGINA MARCAS -->
     <main class="main-wrapper">
         <section class="hero-split">
             <div class="hero-text">
@@ -242,11 +120,11 @@
             </div>
         </section>
     </main> 
+    
     <!-- Footer cargado dinámicamente -->
     <div id="footer-container"></div>
 
     <script src="js/components.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/sidebar.js"></script>
 </body>
 </html>

@@ -1,11 +1,12 @@
-/* --- ESTILO FOOTER AZUL PROFESIONAL --- */
+/* --- ESTILO FOOTER CLARO PROFESIONAL CON NEGRO --- */
 .custom-footer {
-    /* Un azul marino profundo pero con matiz profesional (oscuro) */
-    background-color: #070e1a; 
-    color: #cbd5e0;
+    /* Fondo crema claro elegante */
+    background-color: #ffffff; 
+    color: #333333; /* Texto principal en negro */
     padding: 80px 0 40px 0;
     font-family: 'Poppins', sans-serif;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Línea sutil superior */
+    border-top: 1px solid rgba(0, 0, 0, 0.05); /* Línea sutil superior */
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.02); /* Sombra sutil para dar profundidad */
 }
 
 .footer-container {
@@ -19,7 +20,7 @@
 
 /* Columna del Logo */
 .footer-logo-brand {
-    color: #ffffff;
+    color: #000000; /* Negro puro para el logo */
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -29,7 +30,7 @@
 }
 
 .footer-logo-brand i {
-    color: #1e40af; /* Azul vibrante profesional */
+    color: #000000; /* Icono del logo en negro */
 }
 
 .footer-description {
@@ -37,7 +38,7 @@
     line-height: 1.6;
     margin-bottom: 25px;
     max-width: 300px;
-    color: #cbd5e0; /* Texto suavizado */
+    color: #444444; /* Texto en gris oscuro casi negro */
 }
 
 .footer-social-links {
@@ -46,20 +47,28 @@
 }
 
 .footer-social-links a {
-    color: #ffffff;
+    color: #000000; /* Iconos sociales en negro */
     font-size: 18px;
     transition: 0.3s;
-    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.05); /* Fondo gris muy claro */
+    padding: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .footer-social-links a:hover {
-    color: #1e40af; /* Cambio al azul de acento */
-    opacity: 1;
+    color: #ffffff; /* Texto blanco al hover */
+    background-color: #000000; /* Fondo negro al hover */
+    transform: translateY(-3px);
 }
 
 /* Títulos y Listas */
 .footer-title {
-    color: #ffffff;
+    color: #000000; /* Títulos en negro */
     font-size: 18px;
     margin-bottom: 30px;
     font-weight: 600;
@@ -74,7 +83,7 @@
     bottom: -8px;
     width: 30px;
     height: 2px;
-    background-color: #1e40af;
+    background-color: #000000; /* Línea decorativa en negro */
 }
 
 .footer-list {
@@ -87,15 +96,17 @@
 }
 
 .footer-list li a {
-    color: #cbd5e0;
+    color: #444444; /* Enlaces en gris oscuro */
     text-decoration: none;
     font-size: 14px;
     transition: 0.3s;
+    display: inline-block;
 }
 
 .footer-list li a:hover {
-    color: #ffffff;
+    color: #000000; /* Negro al hover */
     padding-left: 5px; /* Efecto sutil de movimiento */
+    font-weight: 500;
 }
 
 /* Columna Horarios y Botón */
@@ -105,14 +116,16 @@
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #444444; /* Texto horarios en gris oscuro */
 }
 
 .footer-hours i {
-    color: #1e40af; /* Iconos en azul profesional */
+    color: #000000; /* Iconos horarios en negro */
 }
 
 .hours-text {
     line-height: 1.6;
+    color: #444444;
 }
 
 .footer-call-btn {
@@ -120,11 +133,11 @@
     align-items: center;
     gap: 10px;
     padding: 12px 30px;
-    /* Borde azul translúcido */
-    border: 1px solid rgba(30, 64, 175, 0.5); 
+    /* Borde negro translúcido */
+    border: 1px solid rgba(0, 0, 0, 0.3); 
     border-radius: 50px;
-    color: #ffffff;
-    background-color: rgba(30, 64, 175, 0.1);
+    color: #000000; /* Texto del botón en negro */
+    background-color: rgba(0, 0, 0, 0.05);
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -132,25 +145,34 @@
     transition: 0.3s;
 }
 
+.footer-call-btn i {
+    color: #000000; /* Icono del botón en negro */
+}
+
 .footer-call-btn:hover {
-    background-color: #1e40af;
-    border-color: #1e40af;
-    color: #ffffff;
+    background-color: #000000; /* Fondo negro al hover */
+    border-color: #000000;
+    color: #ffffff; /* Texto blanco al hover */
     transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-call-btn:hover i {
+    color: #ffffff; /* Icono blanco al hover */
 }
 
 /* Línea y Copyright */
 .footer-bottom-line {
     max-width: 1200px;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: rgba(0, 0, 0, 0.15); /* Línea más visible en negro */
     margin: 60px auto 30px auto;
 }
 
 .footer-copyright {
     text-align: center;
     font-size: 13px;
-    color: #8a99a8;
+    color: #666666; /* Copyright en gris medio */
 }
 
 /* Responsivo */
